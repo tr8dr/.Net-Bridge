@@ -43,26 +43,62 @@ namespace com.stg.dummy
         }
 
         public double Radius 
-            { get { return _radius; } }
+            { get { return _radius; } set { _radius = value; } }
+        public double Area 
+            { get { return Math.PI * _radius * _radius; } }
             
-        public Point[] PointsFor (double Ra, double Rb, double incr)
+        ...
+            
+        // function returning list of objects
+        public List<Point> PointsFor1 (int npoints)
         {
+            var incr = 2.0 * Math.PI / (double)npoints;
+            var list = new List<Point>[);
             
+            for (int i = 0 ; i < npoints ; i++)
+            {
+                var theta = (double)i * incr;
+                var x = _radius * Math.cos(theta);
+                var y = _radius * Math.sin(theta);
+                list.Add (new Point(x,y));
+            }
+            
+            return list;
         }
         
+        // function returning array of objects
+        public Point[] PointsFor2 (int npoints)
+        {
+            return PointsFor(npoints).ToArray();
+        }        
     }
 }
 
 ```
-Here is an example in R:
+Here is how we would call the above from R:
 ```R
-## create object PriceProbability within library
-model <- .cnew("com.stg.models.PriceProbability", '1M', 'Up', 0.01)
+## create circle object
+circle <- .cnew("com.stg.dummy.Circle", 10.0)
+## OR if unique within the library can elide the namespace
+circle <- .cnew("Circle", 10.0)
+## OR we can use a to-be-parsed constructor string (sometimes this is useful)
+circle <- .cnew("Circle(10.0)")
 
-## call "F" method on .NET object
-model$F (1.34)
+## get the list of points back
+pointlist <- circle$PointsFor1 (100)
+## dereference one of the point objects
+point <- pointlist[2]
+## or do it all in one go
+point <- circle$PointsFor1 (100)[3]
 
-## 
-series <- model$Sample(0.0, 1.0)
+## same thing works for the array
+point <- circle$PointsFor2 (100)[3]
+
+
+## getting a property
+circle$Get("Area")
+## setting a property
+circle$Set("Radius, 20)
+
 ```
 
