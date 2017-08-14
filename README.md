@@ -4,9 +4,28 @@
 - create .NET objects
 - call member functions
 - call class functions (i.e. static members)
-- access properties
+- access and set properties
 - access indexing members
 
 The following data types in arguments are supported:
+
+- .NET objects
+- integers (16, 32, 64) bit
+- floats (32, 64) bit
+- strings
+- byte
+- boolean
+- arrays of: objects, integers, doubles, boolean, bytes, strings, etc
+- vectors (with optional named index)
+- matrices (with optional named row and column indices)
+
+## The History
+Some years ago, wrote .NET bridge as part of a much larger trading system codebase.  Given interest from others on the net, made an effort to extract the bridge and related classes from the much larger codebase.   While the .NET Bridge codebase is a factor of 100x smaller, there may yet be classes that could be removed, to make this even tighter.
+
+## How It Works
+The R or Python packages communicate with the .NET side through simple client / server interactions.  Your .NET libraries are loaded by a runner that provides a server-based API, giving full visibility into your library(ies). 
+
+On first use from R or Python, the package will start the .NET bridge server (or alternatively connect to an existing server).  If the server is started from within VisualStudio, Xamarin Studio, or other tool, can be run in debug mode, so that you can debug your libraries as they are called from R or Python.
+
 
 
