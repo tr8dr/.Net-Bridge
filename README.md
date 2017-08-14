@@ -30,6 +30,13 @@ On first use from R or Python, the package will start the .NET bridge server (or
 
 When a method is first called the code looks for all methods in a class that may match based on name and number of arguments and then picks the method from that subset with the closest convertible signature.  The argument set need not be a perfect match in terms of types provided that the types can be reasonably converted.   For example strings will be converted to enum values if a given signature requires an enum, integers can be converted to floating point, double[] arrays can be applied to double[] or Vector<double>, etc.
 
+For example if a class has 2 overloaded public methods "F":
+
+- public double F (double x, Vector<double> series)
+- public double F (Direction dir, Vector<double> series)
+
+where Direction is enum Direction { Up, Down }.  If the object is called from R or python as obj.F ('Up', [0.1, 0.2, 3.0, 3.1, 3.2]), the second method would be chosen given that 'Up' is convertible to Direction.Up and the numeric array is convertible to Vector<double>.
+
 ## Example
 Assuming the following (contrived) .NET classes:
 ```C#
