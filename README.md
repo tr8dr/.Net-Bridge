@@ -21,7 +21,7 @@ The following data types in arguments are supported:
 - matrices (with optional named row and column indices)
 
 ## The History
-Some years ago, wrote .NET bridge as part of a much larger trading system codebase.  Given interest from others on the net, made an effort to extract the bridge and related classes from the much larger codebase.   While the .NET Bridge codebase is a factor of 100x smaller, there may yet be classes that could be removed, to make this even tighter.
+Some years ago, wrote the .NET bridge as part of a much larger research and trading codebase.  Given interest from others on the net, made an effort to extract the bridge and related classes from the much larger codebase.   While the .NET Bridge codebase is a factor of 100x smaller, there may yet be classes that could be removed, to make this even tighter.
 
 ## How It Works
 The R or Python packages communicate with the .NET side through simple client / server interactions.  Your .NET libraries are loaded by a runner that provides a server-based API, giving full visibility into your library(ies). 
