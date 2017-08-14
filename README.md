@@ -32,8 +32,8 @@ When a method is first called the code looks for all methods in a class that may
 
 For example if a class has 2 overloaded public methods "F":
 
-- public double F (double x, Vector<double> series)
-- public double F (Direction dir, Vector<double> series)
+- ```public double F (double x, Vector<double> series)```
+- ```public double F (Direction dir, Vector<double> series)```
 
 where Direction is ```enum Direction { Up, Down }```.  If the object is called from R or python as:
 
