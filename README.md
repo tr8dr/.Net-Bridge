@@ -75,7 +75,7 @@ namespace com.stg.dummy
 }
 
 ```
-Here is how we could call the above from R:
+The R api uses the $ syntax to reference members much like other R object approaches.  Here is how we could call the above from R:
 ```R
 ## create circle object
 circle <- .cnew("com.stg.dummy.Circle", 10.0)
@@ -97,7 +97,7 @@ circle$Set("Radius, 20)
 
 ```
 
-Here is how we could call the above from python:
+The python API provides CLR as proxy objects almost indistinguishable from python objects.  One can interact with normal python syntax.  Here is how we could call the above from python:
 ```python
 clr = CLRApi.get()
 
