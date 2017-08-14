@@ -28,6 +28,8 @@ The R or Python packages communicate with the .NET side through simple client / 
 
 On first use from R or Python, the package will start the .NET bridge server (or alternatively connect to an existing server).  If the server is started from within VisualStudio, Xamarin Studio, or other tool, can be run in debug mode, so that you can debug your libraries as they are called from R or Python.
 
+When a method is first called the code looks for all methods in a class that may match based on name and number of arguments and then picks the method from that subset with the closest convertible signature.  The argument set need not be a perfect match in terms of types provided that the types can be reasonably converted.   For example strings will be converted to enum values if a given signature requires an enum, integers can be converted to floating point, double[] arrays can be applied to double[] or Vector<double>, etc.
+
 ## Example
 Assuming the following (contrived) .NET classes:
 ```C#
