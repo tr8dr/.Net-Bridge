@@ -28,7 +28,7 @@ The R or Python packages communicate with the .NET side through simple client / 
 
 On first use from R or Python, the package will start the .NET bridge server (or alternatively connect to an existing server).  If the server is started from within VisualStudio, Xamarin Studio, or other tool, can be run in debug mode, so that you can debug your libraries as they are called from R or Python.
 
-## Examples
+## Example
 Assuming the following (contrived) .NET classes:
 ```C#
 namespace com.stg.dummy 
