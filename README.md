@@ -14,6 +14,7 @@ The following data types in arguments are supported:
 - floats (32, 64) bit
 - strings
 - byte
+- enums
 - boolean
 - arrays of: objects, integers, doubles, boolean, bytes, strings, etc
 - vectors (with optional named index)
@@ -27,5 +28,41 @@ The R or Python packages communicate with the .NET side through simple client / 
 
 On first use from R or Python, the package will start the .NET bridge server (or alternatively connect to an existing server).  If the server is started from within VisualStudio, Xamarin Studio, or other tool, can be run in debug mode, so that you can debug your libraries as they are called from R or Python.
 
+## Examples
+Assuming the following (contrived) .NET classes:
+```C#
+namespace com.stg.dummy 
+{
+    class Point (double X, double Y);
+    
+    class Circle
+    {
+        Circle (double radius)
+        {
+            _radius = radius;
+        }
 
+        public double Radius 
+            { get { return _radius; } }
+            
+        public Point[] PointsFor (double Ra, double Rb, double incr)
+        {
+            
+        }
+        
+    }
+}
+
+```
+Here is an example in R:
+```R
+## create object PriceProbability within library
+model <- .cnew("com.stg.models.PriceProbability", '1M', 'Up', 0.01)
+
+## call "F" method on .NET object
+model$F (1.34)
+
+## 
+series <- model$Sample(0.0, 1.0)
+```
 
