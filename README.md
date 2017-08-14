@@ -75,30 +75,47 @@ namespace com.stg.dummy
 }
 
 ```
-Here is how we would call the above from R:
+Here is how we could call the above from R:
 ```R
 ## create circle object
 circle <- .cnew("com.stg.dummy.Circle", 10.0)
-## OR if unique within the library can elide the namespace
-circle <- .cnew("Circle", 10.0)
-## OR we can use a to-be-parsed constructor string (sometimes this is useful)
-circle <- .cnew("Circle(10.0)")
 
 ## get the list of points back
 pointlist <- circle$PointsFor1 (100)
+
 ## dereference one of the point objects
 point <- pointlist[2]
+
 ## or do it all in one go
 point <- circle$PointsFor1 (100)[3]
 
-## same thing works for the array
-point <- circle$PointsFor2 (100)[3]
-
-
 ## getting a property
 circle$Get("Area")
+
 ## setting a property
 circle$Set("Radius, 20)
 
 ```
 
+Here is how we could call the above from python:
+```python
+clr = CLRApi.get()
+
+## create circle object
+circle = clr.new("com.stg.dummy.Circle", 10.0)
+
+## get the list of points back
+pointlist = circle.PointsFor1 (100)
+
+## dereference one of the point objects
+point = pointlist[2]
+
+## or do it all in one go
+point = circle.PointsFor1 (100)[3]
+
+## getting a property
+circle.Area
+
+## setting a property
+circle.Radius = 20
+```
