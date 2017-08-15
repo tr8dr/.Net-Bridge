@@ -1,0 +1,161 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Project DefaultTargets="Build" ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{73F807C6-62E6-4667-8E36-829DF0C6FFB3}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <RootNamespace>net.bridge</RootNamespace>
+    <AssemblyName>Library</AssemblyName>
+    <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
+    <UseMSBuildEngine>false</UseMSBuildEngine>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug</OutputPath>
+    <DefineConstants>DEBUG;</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <ConsolePause>false</ConsolePause>
+    <AllowUnsafeBlocks>true</AllowUnsafeBlocks>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release</OutputPath>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <ConsolePause>false</ConsolePause>
+    <AllowUnsafeBlocks>true</AllowUnsafeBlocks>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="System" />
+    <Reference Include="MathNet.Numerics">
+      <HintPath>..\packages\MathNet.Numerics.3.20.0\lib\net40\MathNet.Numerics.dll</HintPath>
+    </Reference>
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="src\bridge\ICLRBridge.cs" />
+    <Compile Include="src\bridge\embedded\CLRBridgeEmbedded.cs" />
+    <Compile Include="src\bridge\server\CLRBridgeClient.cs" />
+    <Compile Include="src\bridge\server\CLRBridgeServer.cs" />
+    <Compile Include="src\bridge\server\CLRBridgeServerClient.cs" />
+    <Compile Include="src\bridge\server\CLRMessage.cs" />
+    <Compile Include="src\bridge\server\CLRObjectProxy.cs" />
+    <Compile Include="src\bridge\server\ctrl\CLRCallMethodMessage.cs" />
+    <Compile Include="src\bridge\server\ctrl\CLRCallStaticMethodMessage.cs" />
+    <Compile Include="src\bridge\server\ctrl\CLRCreateMessage.cs" />
+    <Compile Include="src\bridge\server\ctrl\CLRGetIndexedMessage.cs" />
+    <Compile Include="src\bridge\server\ctrl\CLRGetIndexedPropertyMessage.cs" />
+    <Compile Include="src\bridge\server\ctrl\CLRGetPropertyMessage.cs" />
+    <Compile Include="src\bridge\server\ctrl\CLRGetStaticPropertyMessage.cs" />
+    <Compile Include="src\bridge\server\ctrl\CLRProtectMessage.cs" />
+    <Compile Include="src\bridge\server\ctrl\CLRReleaseMessage.cs" />
+    <Compile Include="src\bridge\server\ctrl\CLRSetPropertyMessage.cs" />
+    <Compile Include="src\bridge\server\ctrl\CLRSetStaticPropertyMessage.cs" />
+    <Compile Include="src\bridge\server\ctrl\CLRTemplateReplyMessage.cs" />
+    <Compile Include="src\bridge\server\ctrl\CLRTemplateReqMessage.cs" />
+    <Compile Include="src\bridge\server\data\CLRBoolArrayMessage.cs" />
+    <Compile Include="src\bridge\server\data\CLRBoolMessage.cs" />
+    <Compile Include="src\bridge\server\data\CLRByteArrayMessage.cs" />
+    <Compile Include="src\bridge\server\data\CLRByteMessage.cs" />
+    <Compile Include="src\bridge\server\data\CLRExceptionMessage.cs" />
+    <Compile Include="src\bridge\server\data\CLRInt32ArrayMessage.cs" />
+    <Compile Include="src\bridge\server\data\CLRInt32Message.cs" />
+    <Compile Include="src\bridge\server\data\CLRInt64ArrayMessage.cs" />
+    <Compile Include="src\bridge\server\data\CLRInt64Message.cs" />
+    <Compile Include="src\bridge\server\data\CLRMatrixMessage.cs" />
+    <Compile Include="src\bridge\server\data\CLRNullMessage.cs" />
+    <Compile Include="src\bridge\server\data\CLRObjectArrayMessage.cs" />
+    <Compile Include="src\bridge\server\data\CLRObjectMessage.cs" />
+    <Compile Include="src\bridge\server\data\CLRReal64ArrayMessage.cs" />
+    <Compile Include="src\bridge\server\data\CLRReal64Message.cs" />
+    <Compile Include="src\bridge\server\data\CLRStringArrayMessage.cs" />
+    <Compile Include="src\bridge\server\data\CLRStringMessage.cs" />
+    <Compile Include="src\bridge\server\data\CLRVectorMessage.cs" />
+    <Compile Include="src\common\io\BitConversions.cs" />
+    <Compile Include="src\common\io\Blob.cs" />
+    <Compile Include="src\common\io\BufferedDuplexStream.cs" />
+    <Compile Include="src\common\io\BufferedReadStream.cs" />
+    <Compile Include="src\common\io\BufferedWriteStream.cs" />
+    <Compile Include="src\common\io\ConcatedStream.cs" />
+    <Compile Include="src\common\io\EndianConversions.cs" />
+    <Compile Include="src\common\io\EndianReaders.cs" />
+    <Compile Include="src\common\io\EndianStreams.cs" />
+    <Compile Include="src\common\io\EndianWriters.cs" />
+    <Compile Include="src\common\io\IBinaryConversions.cs" />
+    <Compile Include="src\common\io\IBinaryReader.cs" />
+    <Compile Include="src\common\io\IBinaryWriter.cs" />
+    <Compile Include="src\common\io\IOUtils.cs" />
+    <Compile Include="src\common\io\NetUtils.cs" />
+    <Compile Include="src\common\parsing\Token.cs" />
+    <Compile Include="src\common\parsing\ctor\CtorLexer.cs" />
+    <Compile Include="src\common\parsing\ctor\CtorParser.cs" />
+    <Compile Include="src\common\parsing\ctor\CtorToken.cs" />
+    <Compile Include="src\common\parsing\dates\DateLexer.cs" />
+    <Compile Include="src\common\parsing\dates\DateParser.cs" />
+    <Compile Include="src\common\parsing\dates\DateToken.cs" />
+    <Compile Include="src\common\parsing\json\JsonLexer.cs" />
+    <Compile Include="src\common\parsing\json\JsonToken.cs" />
+    <Compile Include="src\common\reflection\Creator.cs" />
+    <Compile Include="src\common\reflection\DelegateGenerator.cs" />
+    <Compile Include="src\common\reflection\ReflectUtils.cs" />
+    <Compile Include="src\common\reflection\ValueTypeUtils.cs" />
+    <Compile Include="src\common\system\ExclusiveLock.cs" />
+    <Compile Include="src\common\system\ILock.cs" />
+    <Compile Include="src\common\system\ReadWriteLock.cs" />
+    <Compile Include="src\common\system\ReentrantFairLockByMonitor.cs" />
+    <Compile Include="src\common\system\SpinLock.cs" />
+    <Compile Include="src\common\system\TicketLock.cs" />
+    <Compile Include="src\common\time\Clock.cs" />
+    <Compile Include="src\common\time\ZDateTime.cs" />
+    <Compile Include="src\common\time\ZDateTimeGenerator.cs" />
+    <Compile Include="src\common\time\ZDateTimeInfo.cs" />
+    <Compile Include="src\common\time\ZDateTimeRange.cs" />
+    <Compile Include="src\common\time\ZDaylightSavings.cs" />
+    <Compile Include="src\common\time\ZTime.cs" />
+    <Compile Include="src\common\time\ZTimeOfDay.cs" />
+    <Compile Include="src\common\time\ZTimeRange.cs" />
+    <Compile Include="src\common\time\ZTimeZone.cs" />
+    <Compile Include="src\common\utils\Any.cs" />
+    <Compile Include="src\common\utils\ArgumentParser.cs" />
+    <Compile Include="src\common\utils\ArrayUtils.cs" />
+    <Compile Include="src\common\utils\AtomicUtils.cs" />
+    <Compile Include="src\common\utils\CmpUtils.cs" />
+    <Compile Include="src\common\utils\FileUtils.cs" />
+    <Compile Include="src\common\utils\Logger.cs" />
+    <Compile Include="src\common\utils\ResourceLoader.cs" />
+    <Compile Include="src\common\utils\StringUtils.cs" />
+    <Compile Include="src\common\utils\SystemUtils.cs" />
+    <Compile Include="src\common\matrix\ColumnViewVector.cs" />
+    <Compile Include="src\common\matrix\EvaluatedVector.cs" />
+    <Compile Include="src\common\matrix\IIndexByName.cs" />
+    <Compile Include="src\common\matrix\IndexByName.cs" />
+    <Compile Include="src\common\matrix\IndexedMatrix.cs" />
+    <Compile Include="src\common\matrix\IndexedVector.cs" />
+    <Compile Include="src\common\matrix\MatrixOps.cs" />
+    <Compile Include="src\common\matrix\MatrixUtils.cs" />
+    <Compile Include="src\common\matrix\SubviewMatrix.cs" />
+    <Compile Include="src\common\matrix\SubviewVector.cs" />
+    <Compile Include="src\common\serialization\IPersist.cs" />
+    <Compile Include="src\common\collections\BlockingQueue.cs" />
+    <Compile Include="src\common\collections\Collections.cs" />
+    <Compile Include="src\common\collections\Comparators.cs" />
+    <Compile Include="src\common\collections\LRUCache.cs" />
+    <Compile Include="src\common\collections\LinkedNode.cs" />
+    <Compile Include="src\common\collections\LinkedQueue.cs" />
+    <Compile Include="src\common\collections\PriorityQueue.cs" />
+    <Compile Include="src\common\collections\SortedList.cs" />
+    <Compile Include="src\common\io\BufferedRandomAccessFile.cs" />
+    <Compile Include="src\common\system\ObjectPool.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="src\common\matrix\" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="packages.config" />
+  </ItemGroup>
+  <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
+</Project>

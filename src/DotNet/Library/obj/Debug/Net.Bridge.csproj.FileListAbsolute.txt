@@ -1,0 +1,7 @@
+/Volumes/fufu/Dev/DotNetBridge/src/DotNet/Library/bin/Debug/Library.dll
+/Volumes/fufu/Dev/DotNetBridge/src/DotNet/Library/bin/Debug/Library.pdb
+/Volumes/fufu/Dev/DotNetBridge/src/DotNet/Library/bin/Debug/MathNet.Numerics.dll
+/Volumes/fufu/Dev/DotNetBridge/src/DotNet/Library/bin/Debug/MathNet.Numerics.xml
+/Volumes/fufu/Dev/DotNetBridge/src/DotNet/Library/obj/Debug/Net.Bridge.csproj.CoreCompileInputs.cache
+/Volumes/fufu/Dev/DotNetBridge/src/DotNet/Library/obj/Debug/Library.dll
+/Volumes/fufu/Dev/DotNetBridge/src/DotNet/Library/obj/Debug/Library.pdb

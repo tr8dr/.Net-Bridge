@@ -1,0 +1,1 @@
+/Volumes/fufu/Dev/DotNetBridge/src/DotNet/Runner/obj/Debug/Runner.csproj.CoreCompileInputs.cache
