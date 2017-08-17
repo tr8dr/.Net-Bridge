@@ -43,7 +43,47 @@ obj.F ('Up', [0.1, 0.2, 3.0, 3.1, 3.2])
 the second method would be chosen given that 'Up' is convertible to ```Direction.Up``` and the numeric array is convertible to ```Vector<double>```.
 
 ## Initialization
-The .NET bridge server (CLRServer.exe) does not contain the types / classes and functions / methods
+The .NET bridge server (CLRServer.exe) does not contain your code by default.  We need to instruct the server to load a dll or dlls from your environment.  There are a number of ways to do this:
+
+- run CLRServer.exe -dll <path to your dll> on the command line 
+- run CLRServer.exe -dll <path to your dll> in your favorite IDE (particularly useful for debugging)
+- run from within R or Python
+
+From within R one has two options.  The first approach is to set an environment variable either within the R session or externally:
+```R
+## set environment variable
+Sys.setenv(rDotNet_DLL="~/Dev/mymodels.dll")
+
+## load package
+require(rDotNet)
+
+## create an object and call a method
+obj <- .cnew ("NormalDistribution1D", 0.0, 1.0)
+obj$F (0.1)
+```
+
+The second approch is to explicitly call the rDotNet initialization function:
+```R
+require(rDotNet)
+
+## initialize
+.cinit(dll="~/Dev/mymodels.dll")
+
+## create an object and call a method
+obj <- .cnew ("NormalDistribution1D", 0.0, 1.0)
+obj$F (0.1)
+```
+
+In python, there is one approach, since the API usage pattern is different:
+```python
+clr = CLRApi (dll="~/Dev/mymodels.dll")
+
+## create an object and call a method
+obj <- clr.new ("NormalDistribution1D", 0.0, 1.0)
+obj.F (0.1)
+
+```
+
 
 ## Example
 Assuming the following (contrived) .NET classes:
