@@ -6,3 +6,8 @@ obj
 .DS_Store
 *~
 symbols.rds
+.Rproj.user
+.RData
+.Rbuildignore
+.Rhistory
+

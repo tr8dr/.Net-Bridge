@@ -49,7 +49,7 @@ if os.path.isdir ('build'):
 # copy .NET CLR server to build dir
 packagedir = dirname(os.path.abspath(__file__))
 targetdir = packagedir + "/build/lib/pydotnet"
-srddir = dirname(dirname(packagedir)) + "/DotNet/Runner/bin/Debug"
+srddir = dirname(dirname(packagedir)) + "/bin/Debug"
 
 os.makedirs (targetdir)
 shutil.copytree(srddir, targetdir + "/server")

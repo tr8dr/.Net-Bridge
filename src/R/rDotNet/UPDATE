@@ -1,3 +1,2 @@
-devtools::document()
 Rcpp::compileAttributes()
 

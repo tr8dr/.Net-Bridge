@@ -21,29 +21,8 @@
 #
 
 
-#' Initialize R <-> .NET bridge
-#'
-#' The function either connects to an existing running CLR bridge process at the given host:port or
-#' instantiates a new CLR server at the current host with the given port and server arguments.
-#'
-#' If the .NET libraries are to be changed, the CLRServer process and R should be restarted.  CLR references
-#' in the R session are only valid for the current CLR server instance. 
-#'
-#' Note that \code{.cinit} should only be called once per R session.  Calling multiple times will invalidate
-#' any objects created in between prior calls.
-#'
-#' @param host The host machine on which the CLR bridge server is running; generally this
-#'   is the localhost, which is the default.
-#' @param port The port on which the CLR bridge is listening (default: 56789)
-#' @param dll The path to an optional library dll to be loaded by the server.  This dll would contain .NET classes
-#'   and functions one wants to call from R.
-#' @param server.args Optional parameters to the CLRServer process (CLRServer.exe -help to list the options).
-#'
-#' @examples
-#' \dontrun{
-#' # create .NET bridge server, loading personal library to be referenced in the R session
-#' .cinit (dll="~/Dev/MyLibrary.dll")
-#' }
+
+
 .cinit <- function (host = "localhost", port = 56789, dll=NULL, server.args=NULL)
 {
     packagedir <- path.package("rDotNet")
@@ -63,7 +42,7 @@
             "mono")
     
     system2 (exe, args, wait=FALSE, stderr=F, stdout=F) 
-    invisible(.Call("rDotNet_cinit", PACKAGE='rDotNet', host, port))
+    rDotNet_cinit(host, port)
 }
 
 

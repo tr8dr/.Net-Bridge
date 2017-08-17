@@ -6,7 +6,7 @@
     <ProjectGuid>{73F807C6-62E6-4667-8E36-829DF0C6FFB3}</ProjectGuid>
     <OutputType>Library</OutputType>
     <RootNamespace>net.bridge</RootNamespace>
-    <AssemblyName>Library</AssemblyName>
+    <AssemblyName>Net.Bridge</AssemblyName>
     <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
     <UseMSBuildEngine>false</UseMSBuildEngine>
   </PropertyGroup>
