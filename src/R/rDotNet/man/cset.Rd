@@ -1,9 +1,8 @@
 \name{.cset}
-\alias{.cset}
+\alias{obj$Set(propertyname, value)}
 \title{Set a property value on a .NET object}
 \usage{
-.sget(obj, propertyname, value) or
-obj$Set(propertyname, value)
+.cset(obj, propertyname, value)
 }
 \arguments{
 \item{obj}{Previously created .NET object}
@@ -19,7 +18,7 @@ obj <- .cnew ("com.stg.models.FastMFT")
 obj$Set("Alpha", 0.90)
 obj$Set("Gamma", 1e-4)
 
-gamma <- obj$get("Gamma")
+gamma <- obj$Get("Gamma")
 }
 
 }

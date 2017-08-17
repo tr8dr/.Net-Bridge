@@ -33,63 +33,63 @@ static CLRApi* api = NULL;
 
 
 // [[Rcpp::export]]
-void cinit(const std::string& host, int port)
+void internal_cinit(const std::string& host, int port)
 {
     api = new CLRApi (host.c_str(), port);
 }
 
 
 // [[Rcpp::export]]
-SEXP cnew (const std::string& classname, const List& argv)
+SEXP internal_cnew (const std::string& classname, const List& argv)
 {
     if (api == NULL)
-        cinit ("localhost", 56789);
+        internal_cinit ("localhost", 56789);
 	       
     return api->create (classname, argv);
 }
 
 // [[Rcpp::export]]
-SEXP ccall_static (const std::string& classname, const std::string& method, const List& argv)
+SEXP internal_ccall_static (const std::string& classname, const std::string& method, const List& argv)
 {
     if (api == NULL)
-        cinit ("localhost", 56789);
+        internal_cinit ("localhost", 56789);
 	       
     return api->callstatic (classname, method, argv);
 }
 
 // [[Rcpp::export]]
-SEXP ccall (SEXP obj, const std::string& method, const List& argv)
+SEXP internal_ccall (SEXP obj, const std::string& method, const List& argv)
 {
     if (api == NULL)
-        cinit ("localhost", 56789);
+        internal_cinit ("localhost", 56789);
 	       
     return api->call (obj, method, argv);
 }
 
 // [[Rcpp::export]]
-SEXP cget (SEXP obj, const std::string& property)
+SEXP internal_cget (SEXP obj, const std::string& property)
 {
     if (api == NULL)
-        cinit ("localhost", 56789);
+        internal_cinit ("localhost", 56789);
 	       
     return api->get (obj, property);
 }
 
 // [[Rcpp::export]]
-void cset (SEXP obj, const std::string& property, const RObject& value)
+void internal_cset (SEXP obj, const std::string& property, const RObject& value)
 {
     if (api == NULL)
-        cinit ("localhost", 56789);
+        internal_cinit ("localhost", 56789);
 	       
     api->set (obj, property, value);
 }
 
 
 // [[Rcpp::export]]
-SEXP cget_indexed (SEXP obj, int ith)
+SEXP internal_cget_indexed (SEXP obj, int ith)
 {
     if (api == NULL)
-        cinit ("localhost", 56789);
+        internal_cinit ("localhost", 56789);
 	       
     return api->get_indexed (obj, ith);
 }

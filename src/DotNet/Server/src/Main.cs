@@ -24,6 +24,7 @@ using System;
 using bridge.common.utils;
 using bridge.server;
 using bridge.common.reflection;
+using System.Collections.Generic;
 
 
 namespace CLRServer
@@ -32,8 +33,19 @@ namespace CLRServer
     /// Runs the CLR server on a given port.
     /// 
     /// </summary>
-	class MainClass
+	class Server
 	{
+        private static void LoadDlls (IList<Any> dlls)
+        {
+			_log.Info("loading and registering library assemblies");
+            foreach (var arg in dlls)
+            {
+                var assemblyname = (string)arg;
+                var assembly = ReflectUtils.FindAssembly(assemblyname);
+                ReflectUtils.Register(assembly);
+            }
+		}
+
 		public static void Main (string[] argv)
 		{
 			ArgumentParser args = new ArgumentParser (argv);
@@ -42,15 +54,9 @@ namespace CLRServer
 			Logger.Parse (args);
 			
 			var url = new Uri (args.Or ("url", "svc://127.0.0.1:56789"));
-            var assemblies = args["dll"].ValueList;
 
-            _log.Info("loading and registering library assemblies");
-            foreach (var arg in assemblies)
-            {
-                var assemblyname = (string)arg;
-                var assembly = ReflectUtils.FindAssembly(assemblyname);
-                ReflectUtils.Register(assembly);
-            }
+            if (args.Contains("dll"))
+                LoadDlls(args["dll"].ValueList);
 
 			_log.Info ("starting CLR bridge server");
 			var svr = new CLRBridgeServer (url);

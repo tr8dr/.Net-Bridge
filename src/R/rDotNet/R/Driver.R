@@ -21,28 +21,70 @@
 #
 
 
-
-
-.cinit <- function (host = "localhost", port = 56789, dll=NULL, server.args=NULL)
+## closure for initialization
+.initialize <- (function ()
 {
-    packagedir <- path.package("rDotNet")
-    server <- sprintf("%s/server/CLRServer.exe", packagedir)
+    initialized <- FALSE
 
-    if (!is.null(dll))
-        server.args <- c(server.args, "-dll", path.expand(dll))
+    expand.dll <- function (dll)
+    {
+        fullpath <- path.expand(dll)
+        if (file.exists(fullpath))
+            fullpath
+        else
+            stop (sprintf("cannot find dll: %s", fullpath))
+    }
+
+    or <- function (a,b)
+    {
+        if (is.null(a) || a == "") b else a
+    }
+
     
-    args <- (if (.Platform$OS.type == "windows")
+    function (host = "localhost", port = 56789, dll=NULL, server.args=NULL)
+    {
+        if (initialized)
+            return()
+
+        if (.Platform$OS.type != "windows")
+        {
+            paths <- c("/usr/bin/mono64","/usr/local/bin/mono64","/Library/Frameworks/Mono.framework/Commands/mono64")
+            mono <- paths[sapply(paths, file.exists)][1]
+            if (is.null(mono))
+                stop ("could not find mono64")
+        }
+        
+        packagedir <- path.package("rDotNet")
+        server <- sprintf("%s/server/CLRServer.exe", packagedir)
+        
+        dll.env <- or (Sys.getenv("RDOTNET_DLL"), Sys.getenv("rDotNet_DLL"))
+        if (!is.null(dll))
+            server.args <- c(server.args, "-dll", expand.dll(dll))
+        else if (dll.env != "")
+            server.args <- c(server.args, "-dll", expand.dll(dll.env))
+            
+        args <- (if (.Platform$OS.type == "windows")
             c("-url", sprintf("svc://%s:%d/", host, port, server, server.args))
         else
-            c("-llvm", server, "-url", sprintf("svc://%s:%d/", host, port), server.args))
+            c("--llvm", server, "-url", sprintf("svc://%s:%d/", host, port), server.args))
 
-    exe <- (if (.Platform$OS.type == "windows")
+        exe <- (if (.Platform$OS.type == "windows")
             server
         else
-            "mono")
+            mono)
     
-    system2 (exe, args, wait=FALSE, stderr=F, stdout=F) 
-    rDotNet_cinit(host, port)
+        system2 (exe, args, wait=FALSE, stderr=F, stdout=F) 
+        internal_cinit(host, port)
+        initialized <<- TRUE
+    }
+    
+}) ()
+
+
+## initialize CLR
+.cinit <- function (host = "localhost", port = 56789, dll=NULL, server.args=NULL)
+{
+    .initialize (host, port, dll, server.args)
 }
 
 
@@ -51,7 +93,7 @@
 {
     .initialize()	       
     argv = list(...)
-    rDotNet_cnew(classname, argv)
+    internal_cnew(classname, argv)
 }
 
 ## call static method on class
@@ -59,33 +101,33 @@
 {
     .initialize()	       
     argv = list(...)
-    rDotNet_ccall_static(classname, method, argv)
+    internal_ccall_static(classname, method, argv)
 }
 
 ## create object through string ctor
 .ctor <- function (ctor)
 {
     .initialize() 
-    rDotNet_ccall_static("bridge.common.reflection.Creator","NewByCtor", list(ctor))
+    internal_ccall_static("bridge.common.reflection.Creator","NewByCtor", list(ctor))
 }
 
 ## call method on object
 .ccall <- function (obj, method, ...)
 {
     argv = list(...)
-    rDotNet_ccall(obj, method, argv)
+    internal_ccall(obj, method, argv)
 }
 
 ## get property value
 .cget <- function (obj, property)
 {
-    rDotNet_cget(obj, property)
+    internal_cget(obj, property)
 }
 
 ## set property value
 .cset <- function (obj, property, value)
 {
-    rDotNet_cset(obj, property, value)
+    internal_cset(obj, property, value)
 }
 
 
@@ -93,10 +135,10 @@
 `$.rDotNet` <- function (obj,fun)
 {
     switch (fun,
-       Get = function(property) rDotNet_cget(obj, property),
-       Set = function(property,value) rDotNet_cset(obj, property, value),
+       Get = function(property) internal_cget(obj, property),
+       Set = function(property,value) internal_cset(obj, property, value),
        function (...) {
-           v <- rDotNet_ccall(obj, fun, list(...))
+           v <- internal_ccall(obj, fun, list(...))
            if (is.null(v))
                invisible(v)
            else
@@ -108,14 +150,14 @@
 ## indexer
 `[.rDotNet` <- function (obj,ith)
 {
-    rDotNet_cget_indexed(obj, ith)
+    internal_cget_indexed(obj, ith)
 }
 
 
 ## to string
 print.rDotNet <- function (obj, ...)
 {
-    tostr <- rDotNet_ccall(obj, "ToString", list())
+    tostr <- internal_ccall(obj, "ToString", list())
     objId <- attr(obj,'ObjectId')
     klass <- attr(obj, 'Classname')
     cat (sprintf("<dotnet obj: %d, class: %s, value: \"%s\">\n", objId, klass, tostr))

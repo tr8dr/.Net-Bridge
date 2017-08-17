@@ -10,4 +10,4 @@ symbols.rds
 .RData
 .Rbuildignore
 .Rhistory
-
+*.user

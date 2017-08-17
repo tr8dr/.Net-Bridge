@@ -5,100 +5,100 @@
 
 using namespace Rcpp;
 
-// cinit
-void cinit(const std::string& host, int port);
-RcppExport SEXP _rDotNet_cinit(SEXP hostSEXP, SEXP portSEXP) {
+// internal_cinit
+void internal_cinit(const std::string& host, int port);
+RcppExport SEXP _rDotNet_internal_cinit(SEXP hostSEXP, SEXP portSEXP) {
 BEGIN_RCPP
     Rcpp::RNGScope rcpp_rngScope_gen;
     Rcpp::traits::input_parameter< const std::string& >::type host(hostSEXP);
     Rcpp::traits::input_parameter< int >::type port(portSEXP);
-    cinit(host, port);
+    internal_cinit(host, port);
     return R_NilValue;
 END_RCPP
 }
-// cnew
-SEXP cnew(const std::string& classname, const List& argv);
-RcppExport SEXP _rDotNet_cnew(SEXP classnameSEXP, SEXP argvSEXP) {
+// internal_cnew
+SEXP internal_cnew(const std::string& classname, const List& argv);
+RcppExport SEXP _rDotNet_internal_cnew(SEXP classnameSEXP, SEXP argvSEXP) {
 BEGIN_RCPP
     Rcpp::RObject rcpp_result_gen;
     Rcpp::RNGScope rcpp_rngScope_gen;
     Rcpp::traits::input_parameter< const std::string& >::type classname(classnameSEXP);
     Rcpp::traits::input_parameter< const List& >::type argv(argvSEXP);
-    rcpp_result_gen = Rcpp::wrap(cnew(classname, argv));
+    rcpp_result_gen = Rcpp::wrap(internal_cnew(classname, argv));
     return rcpp_result_gen;
 END_RCPP
 }
-// ccall_static
-SEXP ccall_static(const std::string& classname, const std::string& method, const List& argv);
-RcppExport SEXP _rDotNet_ccall_static(SEXP classnameSEXP, SEXP methodSEXP, SEXP argvSEXP) {
+// internal_ccall_static
+SEXP internal_ccall_static(const std::string& classname, const std::string& method, const List& argv);
+RcppExport SEXP _rDotNet_internal_ccall_static(SEXP classnameSEXP, SEXP methodSEXP, SEXP argvSEXP) {
 BEGIN_RCPP
     Rcpp::RObject rcpp_result_gen;
     Rcpp::RNGScope rcpp_rngScope_gen;
     Rcpp::traits::input_parameter< const std::string& >::type classname(classnameSEXP);
     Rcpp::traits::input_parameter< const std::string& >::type method(methodSEXP);
     Rcpp::traits::input_parameter< const List& >::type argv(argvSEXP);
-    rcpp_result_gen = Rcpp::wrap(ccall_static(classname, method, argv));
+    rcpp_result_gen = Rcpp::wrap(internal_ccall_static(classname, method, argv));
     return rcpp_result_gen;
 END_RCPP
 }
-// ccall
-SEXP ccall(SEXP obj, const std::string& method, const List& argv);
-RcppExport SEXP _rDotNet_ccall(SEXP objSEXP, SEXP methodSEXP, SEXP argvSEXP) {
+// internal_ccall
+SEXP internal_ccall(SEXP obj, const std::string& method, const List& argv);
+RcppExport SEXP _rDotNet_internal_ccall(SEXP objSEXP, SEXP methodSEXP, SEXP argvSEXP) {
 BEGIN_RCPP
     Rcpp::RObject rcpp_result_gen;
     Rcpp::RNGScope rcpp_rngScope_gen;
     Rcpp::traits::input_parameter< SEXP >::type obj(objSEXP);
     Rcpp::traits::input_parameter< const std::string& >::type method(methodSEXP);
     Rcpp::traits::input_parameter< const List& >::type argv(argvSEXP);
-    rcpp_result_gen = Rcpp::wrap(ccall(obj, method, argv));
+    rcpp_result_gen = Rcpp::wrap(internal_ccall(obj, method, argv));
     return rcpp_result_gen;
 END_RCPP
 }
-// cget
-SEXP cget(SEXP obj, const std::string& property);
-RcppExport SEXP _rDotNet_cget(SEXP objSEXP, SEXP propertySEXP) {
+// internal_cget
+SEXP internal_cget(SEXP obj, const std::string& property);
+RcppExport SEXP _rDotNet_internal_cget(SEXP objSEXP, SEXP propertySEXP) {
 BEGIN_RCPP
     Rcpp::RObject rcpp_result_gen;
     Rcpp::RNGScope rcpp_rngScope_gen;
     Rcpp::traits::input_parameter< SEXP >::type obj(objSEXP);
     Rcpp::traits::input_parameter< const std::string& >::type property(propertySEXP);
-    rcpp_result_gen = Rcpp::wrap(cget(obj, property));
+    rcpp_result_gen = Rcpp::wrap(internal_cget(obj, property));
     return rcpp_result_gen;
 END_RCPP
 }
-// cset
-void cset(SEXP obj, const std::string& property, const RObject& value);
-RcppExport SEXP _rDotNet_cset(SEXP objSEXP, SEXP propertySEXP, SEXP valueSEXP) {
+// internal_cset
+void internal_cset(SEXP obj, const std::string& property, const RObject& value);
+RcppExport SEXP _rDotNet_internal_cset(SEXP objSEXP, SEXP propertySEXP, SEXP valueSEXP) {
 BEGIN_RCPP
     Rcpp::RNGScope rcpp_rngScope_gen;
     Rcpp::traits::input_parameter< SEXP >::type obj(objSEXP);
     Rcpp::traits::input_parameter< const std::string& >::type property(propertySEXP);
     Rcpp::traits::input_parameter< const RObject& >::type value(valueSEXP);
-    cset(obj, property, value);
+    internal_cset(obj, property, value);
     return R_NilValue;
 END_RCPP
 }
-// cget_indexed
-SEXP cget_indexed(SEXP obj, int ith);
-RcppExport SEXP _rDotNet_cget_indexed(SEXP objSEXP, SEXP ithSEXP) {
+// internal_cget_indexed
+SEXP internal_cget_indexed(SEXP obj, int ith);
+RcppExport SEXP _rDotNet_internal_cget_indexed(SEXP objSEXP, SEXP ithSEXP) {
 BEGIN_RCPP
     Rcpp::RObject rcpp_result_gen;
     Rcpp::RNGScope rcpp_rngScope_gen;
     Rcpp::traits::input_parameter< SEXP >::type obj(objSEXP);
     Rcpp::traits::input_parameter< int >::type ith(ithSEXP);
-    rcpp_result_gen = Rcpp::wrap(cget_indexed(obj, ith));
+    rcpp_result_gen = Rcpp::wrap(internal_cget_indexed(obj, ith));
     return rcpp_result_gen;
 END_RCPP
 }
 
 static const R_CallMethodDef CallEntries[] = {
-    {"_rDotNet_cinit", (DL_FUNC) &_rDotNet_cinit, 2},
-    {"_rDotNet_cnew", (DL_FUNC) &_rDotNet_cnew, 2},
-    {"_rDotNet_ccall_static", (DL_FUNC) &_rDotNet_ccall_static, 3},
-    {"_rDotNet_ccall", (DL_FUNC) &_rDotNet_ccall, 3},
-    {"_rDotNet_cget", (DL_FUNC) &_rDotNet_cget, 2},
-    {"_rDotNet_cset", (DL_FUNC) &_rDotNet_cset, 3},
-    {"_rDotNet_cget_indexed", (DL_FUNC) &_rDotNet_cget_indexed, 2},
+    {"_rDotNet_internal_cinit", (DL_FUNC) &_rDotNet_internal_cinit, 2},
+    {"_rDotNet_internal_cnew", (DL_FUNC) &_rDotNet_internal_cnew, 2},
+    {"_rDotNet_internal_ccall_static", (DL_FUNC) &_rDotNet_internal_ccall_static, 3},
+    {"_rDotNet_internal_ccall", (DL_FUNC) &_rDotNet_internal_ccall, 3},
+    {"_rDotNet_internal_cget", (DL_FUNC) &_rDotNet_internal_cget, 2},
+    {"_rDotNet_internal_cset", (DL_FUNC) &_rDotNet_internal_cset, 3},
+    {"_rDotNet_internal_cget_indexed", (DL_FUNC) &_rDotNet_internal_cget_indexed, 2},
     {NULL, NULL, 0}
 };
 

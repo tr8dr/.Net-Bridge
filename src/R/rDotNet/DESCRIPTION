@@ -9,7 +9,6 @@ Description: r dotnet interface
 License: Apache 2.0
 Depends: Rcpp, BH
 Imports: Rcpp (>= 0.12.3), BH (>= 1.62.0)
-SystemRequirements : LaTeX(texi2dvi) must be present in the system to create PDF reports
 LinkingTo: Rcpp, BH
 ByteCompile: true
 RoxygenNote: 6.0.1

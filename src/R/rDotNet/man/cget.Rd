@@ -1,9 +1,8 @@
 \name{.cget}
-\alias{.cget}
+\alias{obj$Get(propertyname)}
 \title{Get a property value on a .NET object}
 \usage{
-.cget(obj, propertyname) or
-obj$Get(propertyname)
+.cget(obj, propertyname)
 }
 \arguments{
 \item{obj}{Previously created .NET object}

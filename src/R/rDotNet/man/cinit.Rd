@@ -23,13 +23,18 @@ instantiates a new CLR server at the current host with the given port and server
 If the .NET libraries are to be changed, the CLRServer process and R should be restarted.  CLR references
 in the R session are only valid for the current CLR server instance.
 
-Note that \code{.cinit} should only be called once per R session.  Calling multiple times will invalidate
-any objects created prior to the latest invocation of \code{.cinit}.
+Instead of calling \code{.cinit(dll="~/mydll.dll")} explictly one can set an environment variable \code{Sys.setenv(rDotNet_DLL="~/mydll.dll")} and use \code{.cnew()} and other functions after loading the package as opposed to first calling \code{.cinit}.  One can also run the \code{CLRServer} from the command line or an IDE with the appropriate DLL.
 }
 \examples{
 \dontrun{
+
 ## create .NET bridge server, loading personal library to be referenced in the R session
 .cinit (dll="~/Dev/MyLibrary.dll")
-}
+obj <- .cnew("NormalDistribution1D", 0.0, 1.0)
 
-}
+## alternative without explicit initialization
+Sys.setenv(rDotNet_DLL="~/Dev/models.dll")
+...
+obj <- .cnew("NormalDistribution1D", 0.0, 1.0)
+
+}}

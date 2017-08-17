@@ -258,7 +258,7 @@ namespace bridge.common.utils
 			foreach (Template entry in _templates.Values)
 			{
 				// check to see if arg
-				var arg = _switches [entry.Name];
+                var arg = _switches.ContainsKey(entry.Name) ? _switches[entry.Name] : null;
 
 				if (arg == null && entry.Mandatory)
 					ArgumentError ("could not find mandatory argument: " + entry.Name);
@@ -268,7 +268,7 @@ namespace bridge.common.utils
 					ArgumentError ("argument: " + entry.Name + " does not have value");
 			}
 
-			if (_switches ["help"] != null)
+            if (_switches.ContainsKey("help"))
 				{ Help(); System.Environment.Exit (1); }
 		}
 		
@@ -344,7 +344,7 @@ namespace bridge.common.utils
 		/// </summary>
 		private void Add (Argument arg)
 		{
-			if (_switches[arg.Name] != null)
+            if (_switches.ContainsKey(arg.Name))
 				((Argument)_switches[arg.Name]).Append (arg.ValueList);
 			else
 				_switches[arg.Name] = arg;
