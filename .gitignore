@@ -1,4 +1,7 @@
 __pycache__
+.idea
+*.o
+*.so
 .DS_Store
 *~
-
+symbols.rds

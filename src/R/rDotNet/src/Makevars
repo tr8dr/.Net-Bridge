@@ -1,0 +1,3 @@
+PKG_LIBS = `$(R_HOME)/bin/Rscript -e "Rcpp:::LdFlags()"` -L/usr/local/lib -lboost_system 
+PKG_CPPFLAGS = -std=c++0x -I. -I../inst/include 
+CXXFLAGS=-std=c++0x -g -O0 -Wall -frob
