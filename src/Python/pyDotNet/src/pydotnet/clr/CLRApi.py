@@ -42,12 +42,12 @@ class CLRApi:
     Classes = {}
     Api = None
 
-    def __init__(self, hostname="", port=56789, server_start=None, server_args=[]):
+    def __init__(self, hostname="", port=56789, dll=None, server_args=[]):
         self.hostname = hostname
         self.port = port
         self.cin = None
         self.cout = None
-        self.server_start = server_start
+        self.dll = dll
         self.server_args = server_args
         self.connect()
         Api = self
@@ -62,14 +62,20 @@ class CLRApi:
 
         def newServer ():
             server = "%s/server/CLRServer.exe" % SystemUtils.package_path()
+            hostname = "localhost" if self.hostname == "" else self.hostname
+            url = "svc://%s:%d" % (hostname, self.port)
+
+            serverargs = self.server_args
+            if self.dll:
+                serverargs = serverargs + ["-dll", self.dll]
+
             if SystemUtils.is_unix():
                 self.pid = subprocess.Popen(["mono", "--llvm", server] + self.server_args).pid
             else:
                 self.pid = subprocess.Popen([server] + self.server_args).pid
 
 
-        serverfun = newServer if not self.server_start else self.server_start
-        client = SocketUtils.connect(self.hostname, self.port, startup=serverfun)
+        client = SocketUtils.connect(self.hostname, self.port, startup=newServer)
 
         self.cin = BinarySocketReader(client)
         self.cout = BinarySocketWriter(client)

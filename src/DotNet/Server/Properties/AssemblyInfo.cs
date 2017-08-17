@@ -4,12 +4,12 @@ using System.Runtime.CompilerServices;
 // Information about this assembly is defined by the following attributes. 
 // Change them to the values specific to your project.
 
-[assembly: AssemblyTitle("Runner")]
+[assembly: AssemblyTitle("CLRServer")]
 [assembly: AssemblyDescription("")]
 [assembly: AssemblyConfiguration("")]
 [assembly: AssemblyCompany("")]
 [assembly: AssemblyProduct("")]
-[assembly: AssemblyCopyright("jshore")]
+[assembly: AssemblyCopyright("2017 Jonthan Shore")]
 [assembly: AssemblyTrademark("")]
 [assembly: AssemblyCulture("")]
 
