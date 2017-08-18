@@ -7,6 +7,11 @@
 - access and set properties
 - access indexing members
 
+Two packages are provided, in addition to the .NET codebase:
+
+- [rDotNet](https://github.com/tr8dr/.Net-Bridge/tree/master/src/R/rDotNet) (.NET interop for R)
+- [pyDotNet](https://github.com/tr8dr/.Net-Bridge/tree/master/src/Python/pyDotNet) (.NET interop for Python)
+
 The following data types in arguments are supported:
 
 - .NET objects
