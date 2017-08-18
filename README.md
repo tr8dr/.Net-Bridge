@@ -183,4 +183,4 @@ circle.Radius = 20
 ```
 
 # Installation
-Please refer to the [Installation document] (https://github.com/tr8dr/.Net-Bridge/tree/master/INSTALL.md).
+Please refer to the [Installation document](https://github.com/tr8dr/.Net-Bridge/tree/master/INSTALL.md).
