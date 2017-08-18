@@ -29,7 +29,7 @@ The following data types in arguments are supported:
 Some years ago, wrote the .NET bridge as part of a much larger research and trading codebase.  Given interest from others on the net, made an effort to extract the bridge and related classes from the much larger codebase.   While the .NET Bridge codebase is a factor of 100x smaller, there may yet be classes that could be removed, to make this even tighter.
 
 ## How It Works
-The R or Python packages communicate with the .NET side through simple client / server interactions.  Your .NET libraries are loaded by a runner that provides a server-based API, giving full visibility into your library(ies). 
+The R or Python packages communicate with the .NET side through simple client / server interactions.  Your .NET libraries are loaded by a runner ```CLRServer.exe``` that provides a TCP-based API, giving full visibility into your library(ies). 
 
 On first use from R or Python, the package will start the .NET bridge server (or alternatively connect to an existing server).  If the server is started from within VisualStudio, Xamarin Studio, or other tool, can be run in debug mode, so that you can debug your libraries as they are called from R or Python.
 
@@ -48,7 +48,7 @@ obj.F ('Up', [0.1, 0.2, 3.0, 3.1, 3.2])
 the second method would be chosen given that 'Up' is convertible to ```Direction.Up``` and the numeric array is convertible to ```Vector<double>```.
 
 ## Initialization
-The .NET bridge server (CLRServer.exe) does not contain your code by default.  We need to instruct the server to load a dll or dlls from your environment.  There are a number of ways to do this:
+The .NET bridge server (CLRServer.exe) will not have access to your code unless you indicate a DLL to be loaded.  One needs to instruct the server to load a dll or dlls from your environment.  There are a number of ways to do this:
 
 - run CLRServer.exe -dll <path to your dll> on the command line 
 - run CLRServer.exe -dll <path to your dll> in your favorite IDE (particularly useful for debugging)
@@ -57,7 +57,8 @@ The .NET bridge server (CLRServer.exe) does not contain your code by default.  W
 From within R one has two options.  The first approach is to set an environment variable either within the R session or externally:
 ```R
 ## set environment variable
-Sys.setenv(rDotNet_DLL="~/Dev/mymodels.dll")
+Sys.setenv(rDotNet_DLL="~/Dev/mymodels.dll") OR
+Sys.setenv(RDOTNET_DLL="~/Dev/mymodels.dll")
 
 ## load package
 require(rDotNet)
