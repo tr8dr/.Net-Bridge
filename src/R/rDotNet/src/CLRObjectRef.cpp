@@ -27,6 +27,9 @@
 #include "CLRObjectRef.hpp"
 #include "CLRApi.hpp"
 
+#undef TRUE
+#undef FALSE
+
 using namespace std;
 
 //
