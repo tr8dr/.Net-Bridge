@@ -44,7 +44,7 @@ class BufferedSocketWriter
 {
   public:
 
-    BufferedSocketWriter (TcpClient* tcp, int buflen = 8192)
+    BufferedSocketWriter (RTcpClient* tcp, int buflen = 8192)
       : _sock(tcp), _buffer(NULL), _buflen(buflen), _len(0)
     {
         _buffer = new byte[buflen];
@@ -200,7 +200,7 @@ class BufferedSocketWriter
 
   
   private:
-    TcpClient*  _sock; 
+    RTcpClient* _sock; 
     byte*       _buffer;
     int         _buflen;
     int         _len;

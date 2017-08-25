@@ -31,6 +31,11 @@
 
 using namespace std;
 
+inline void assert (bool condition)
+{
+    throw std::runtime_error("message assert constriant not met");
+}
+
 class CLRApi;
 
 //

@@ -47,7 +47,7 @@ class BufferedSocketReader
 {
   public:
 
-    BufferedSocketReader (TcpClient* tcp, int buflen = 4*8192)
+    BufferedSocketReader (RTcpClient* tcp, int buflen = 4*8192)
       : _sock(tcp), _buffer(NULL), _buflen(buflen), _pos(0), _len(0), _eof(false)
     {
         _buffer = new byte[buflen];
@@ -238,7 +238,7 @@ class BufferedSocketReader
     }
   
   private:
-    TcpClient*  _sock; 
+    RTcpClient* _sock; 
     byte*       _buffer;
     int         _buflen;
     int         _pos;

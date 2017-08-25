@@ -103,7 +103,7 @@ class CLRApi
     int                    _port;
     int                    _retries;
     CLRFactory*            _factory;
-    TcpClient*             _tcp;
+    RTcpClient*            _tcp;
     BufferedSocketReader*  _sin;
     BufferedSocketWriter*  _sout;
 };

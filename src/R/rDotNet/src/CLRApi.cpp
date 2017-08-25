@@ -22,15 +22,16 @@
 
 // [[Rcpp::depends(BH)]]
 
-#include <cstdlib>
-#include "Common.hpp"
-#include "CLRApi.hpp"
-#include "CLRObjectRef.hpp"
 #include "OS.hpp"
 
 #ifdef WINDOWS
 #include <windows.h>
 #endif
+
+#include <cstdlib>
+#include "Common.hpp"
+#include "CLRApi.hpp"
+#include "CLRObjectRef.hpp"
 
 #include "msgs/ctrl/CLRCreateObject.hpp"
 #include "msgs/ctrl/CLRCallStatic.hpp"
@@ -96,11 +97,6 @@ RValue CLRApi::query (CLRMessage* msg)
         reset(true);
 	throw std::runtime_error(se.what());
     }
-    catch (boost::exception& be)
-    {
-        reset(true);
-	throw std::runtime_error("connection issue with CLR, resetting");
-    }
     
     // return SEXP
     RValue v = rmsg->rvalue();
@@ -144,11 +140,6 @@ void CLRApi::exec (CLRMessage* msg)
         reset(false);
 	throw std::runtime_error(se.what());
     }
-    catch (boost::exception& be)
-    {
-        reset(false);
-	throw std::runtime_error("connection issue with CLR, resetting");
-    }
 }
 
 
@@ -162,7 +153,7 @@ void CLRApi::start()
     {
         try
         {
-	    _tcp = new TcpClient (_host, _port);
+	    _tcp = new RTcpClient (_host, _port);
 	    _sin = new BufferedSocketReader (_tcp);
 	    _sout = new BufferedSocketWriter (_tcp);
         }
