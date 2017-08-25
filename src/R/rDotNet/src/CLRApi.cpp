@@ -26,6 +26,11 @@
 #include "Common.hpp"
 #include "CLRApi.hpp"
 #include "CLRObjectRef.hpp"
+#include "OS.hpp"
+
+#ifdef WINDOWS
+#include <windows.h>
+#endif
 
 #include "msgs/ctrl/CLRCreateObject.hpp"
 #include "msgs/ctrl/CLRCallStatic.hpp"
@@ -37,6 +42,17 @@
 
 using namespace std;
 using namespace Rcpp;
+
+
+// cross platform sleep function
+static void sleep_for (unsigned int seconds)
+{
+#ifdef UNIX
+  sleep (seconds);
+#else
+  Sleep (seconds * 1000);
+#endif
+}
 
 
 // get object ID from R object structure
@@ -153,7 +169,7 @@ void CLRApi::start()
         catch (...)
         {
 	    if (i < _retries)
-	        sleep(2);
+	        sleep_for (2);
 	    else
 	        throw std::runtime_error("could not connect to CLR server");
         }
