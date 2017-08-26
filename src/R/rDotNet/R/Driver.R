@@ -64,7 +64,7 @@
             }
         
             packagedir <- path.package("rDotNet")
-            server <- sprintf("%s/server/CLRServer.exe", packagedir)
+            server <- sprintf("%s/server/bin/Debug/CLRServer.exe", packagedir)
         
             dll.env <- or (Sys.getenv("RDOTNET_DLL"), Sys.getenv("rDotNet_DLL"))
             if (!is.null(dll))
