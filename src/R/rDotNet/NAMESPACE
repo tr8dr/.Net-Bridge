@@ -1,5 +1,5 @@
 useDynLib(rDotNet,.registration = TRUE)
-export(.cinit,.cnew, .ccall, .ctor, .cstatic, .cget, .cset)
+export(.cinit,.cnew, .ccall, .ctor, .cstatic, .cget, .cset,"$.rDotNet", "[.rDotNet", print.rDotNet)
 exportMethods("$.rDotNet", "[.rDotNet", print.rDotNet)
 
 importFrom(Rcpp, evalCpp)
