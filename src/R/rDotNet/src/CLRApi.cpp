@@ -157,6 +157,7 @@ void CLRApi::start()
 	    _tcp = new RTcpClient (_host, _port);
 	    _sin = new BufferedSocketReader (_tcp);
 	    _sout = new BufferedSocketWriter (_tcp);
+	    return;
         }
         catch (...)
         {

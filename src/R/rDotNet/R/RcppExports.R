@@ -5,6 +5,10 @@ internal_cinit <- function(host, port) {
     invisible(.Call(`_rDotNet_internal_cinit`, host, port))
 }
 
+internal_ctest_connection <- function(host, port) {
+    .Call(`_rDotNet_internal_ctest_connection`, host, port)
+}
+
 internal_cnew <- function(classname, argv) {
     .Call(`_rDotNet_internal_cnew`, classname, argv)
 }

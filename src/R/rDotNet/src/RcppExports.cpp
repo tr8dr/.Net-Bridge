@@ -16,6 +16,18 @@ BEGIN_RCPP
     return R_NilValue;
 END_RCPP
 }
+// internal_ctest_connection
+bool internal_ctest_connection(const std::string& host, int port);
+RcppExport SEXP _rDotNet_internal_ctest_connection(SEXP hostSEXP, SEXP portSEXP) {
+BEGIN_RCPP
+    Rcpp::RObject rcpp_result_gen;
+    Rcpp::RNGScope rcpp_rngScope_gen;
+    Rcpp::traits::input_parameter< const std::string& >::type host(hostSEXP);
+    Rcpp::traits::input_parameter< int >::type port(portSEXP);
+    rcpp_result_gen = Rcpp::wrap(internal_ctest_connection(host, port));
+    return rcpp_result_gen;
+END_RCPP
+}
 // internal_cnew
 SEXP internal_cnew(const std::string& classname, const List& argv);
 RcppExport SEXP _rDotNet_internal_cnew(SEXP classnameSEXP, SEXP argvSEXP) {
@@ -93,6 +105,7 @@ END_RCPP
 
 static const R_CallMethodDef CallEntries[] = {
     {"_rDotNet_internal_cinit", (DL_FUNC) &_rDotNet_internal_cinit, 2},
+    {"_rDotNet_internal_ctest_connection", (DL_FUNC) &_rDotNet_internal_ctest_connection, 2},
     {"_rDotNet_internal_cnew", (DL_FUNC) &_rDotNet_internal_cnew, 2},
     {"_rDotNet_internal_ccall_static", (DL_FUNC) &_rDotNet_internal_ccall_static, 3},
     {"_rDotNet_internal_ccall", (DL_FUNC) &_rDotNet_internal_ccall, 3},

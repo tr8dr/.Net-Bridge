@@ -72,7 +72,6 @@ class CLRObjectArray : public CLRValue<List>
         int len = stream.read_int32();
 	_value = new List();
 
-	CLRFactory* factory = _api->factory();
 	for (int i = 0 ; i < len ; i++)
 	{
 	    CLRMessage* msg = _api->read();

@@ -46,34 +46,45 @@
         if (initialized)
             return()
 
-        if (.Platform$OS.type != "windows")
+        ## test to see whether there is a CLR process already running
+        if (internal_ctest_connection (host, port))
         {
-            paths <- c("/usr/bin/mono64","/usr/local/bin/mono64","/Library/Frameworks/Mono.framework/Commands/mono64")
-            mono <- paths[sapply(paths, file.exists)][1]
-            if (is.null(mono))
-                stop ("could not find mono64")
+            message ("CLR server already running; terminate the CLRserver process if restarting with a different DLL is desired")
+        }
+
+        ## otherwise start server
+        else
+        {
+            if (.Platform$OS.type != "windows")
+            {
+                paths <- c("/usr/bin/mono64","/usr/local/bin/mono64","/Library/Frameworks/Mono.framework/Commands/mono64")
+                mono <- paths[sapply(paths, file.exists)][1]
+                if (is.null(mono))
+                    stop ("could not find mono64")
+            }
+        
+            packagedir <- path.package("rDotNet")
+            server <- sprintf("%s/server/CLRServer.exe", packagedir)
+        
+            dll.env <- or (Sys.getenv("RDOTNET_DLL"), Sys.getenv("rDotNet_DLL"))
+            if (!is.null(dll))
+                server.args <- c(server.args, "-dll", expand.dll(dll))
+            else if (dll.env != "")
+                server.args <- c(server.args, "-dll", expand.dll(dll.env))
+            
+            args <- (if (.Platform$OS.type == "windows")
+                c("-url", sprintf("svc://%s:%d/", host, port), server.args)
+            else
+                c("--llvm", server, "-url", sprintf("svc://%s:%d/", host, port), server.args))
+
+            exe <- (if (.Platform$OS.type == "windows")
+                server
+            else
+                mono)
+    
+            system2 (exe, args, wait=FALSE, stderr=F, stdout=F)
         }
         
-        packagedir <- path.package("rDotNet")
-        server <- sprintf("%s/server/CLRServer.exe", packagedir)
-        
-        dll.env <- or (Sys.getenv("RDOTNET_DLL"), Sys.getenv("rDotNet_DLL"))
-        if (!is.null(dll))
-            server.args <- c(server.args, "-dll", expand.dll(dll))
-        else if (dll.env != "")
-            server.args <- c(server.args, "-dll", expand.dll(dll.env))
-            
-        args <- (if (.Platform$OS.type == "windows")
-            c("-url", sprintf("svc://%s:%d/", host, port, server, server.args))
-        else
-            c("--llvm", server, "-url", sprintf("svc://%s:%d/", host, port), server.args))
-
-        exe <- (if (.Platform$OS.type == "windows")
-            server
-        else
-            mono)
-    
-        system2 (exe, args, wait=FALSE, stderr=F, stdout=F) 
         internal_cinit(host, port)
         initialized <<- TRUE
     }

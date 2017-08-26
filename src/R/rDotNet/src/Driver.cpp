@@ -39,6 +39,22 @@ void internal_cinit(const std::string& host, int port)
 
 
 // [[Rcpp::export]]
+bool internal_ctest_connection(const std::string& host, int port)
+{
+    try
+    {
+        auto tcp = new RTcpClient (host, port);
+	return tcp != nullptr;
+    }
+    catch (...)
+    {
+        return false;
+    }
+}
+
+
+
+// [[Rcpp::export]]
 SEXP internal_cnew (const std::string& classname, const List& argv)
 {
     if (api == NULL)

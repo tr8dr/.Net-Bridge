@@ -61,6 +61,8 @@ namespace CLRServer
 			_log.Info ("starting CLR bridge server");
 			var svr = new CLRBridgeServer (url);
 			svr.Start (blocking: true);
+
+            Environment.Exit(0);
 		}
 
 
