@@ -58,7 +58,8 @@ namespace bridge.server
 			if (_server_socket != null)
 				return;
 
-			SetupListener ();
+            if (!SetupListener())
+                return;
 
 			if (!blocking)
 			{
@@ -79,7 +80,7 @@ namespace bridge.server
 		/// <summary>
 		/// Setup server.
 		/// </summary>
-		private void SetupListener ()
+		private bool SetupListener ()
 		{
 			_log.Info("starting execution server listener on port: " + _port);
 			var mask = new IPEndPoint(IPAddress.Any, _port);
@@ -89,12 +90,14 @@ namespace bridge.server
             {
                 _server_socket.Bind(mask);
                 _server_socket.Listen(10);
+                return true;
             }
             catch (SocketException e)
             {
                 if (e.SocketErrorCode == SocketError.AddressAlreadyInUse)
                 {
                     _log.Warn("another CLR server already running, exiting");
+                    return false;
                 }
                 else
                     throw e;

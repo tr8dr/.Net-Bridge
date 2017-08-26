@@ -1,12 +1,10 @@
 ﻿<Properties StartupConfiguration="{7627AD51-21E3-4536-8931-061D95CECD7C}|Default">
-  <MonoDevelop.Ide.Workbench ActiveDocument="Server/src/Main.cs">
+  <MonoDevelop.Ide.Workbench ActiveDocument="Library/src/common/reflection/ReflectUtils.cs">
     <Files>
-      <File FileName="Server/src/Main.cs" Line="64" Column="13" />
+      <File FileName="Server/src/Main.cs" Line="47" Column="4" />
       <File FileName="Library/src/common/utils/ArgumentParser.cs" Line="271" Column="46" />
       <File FileName="Library/src/common/utils/Logger.cs" Line="223" Column="21" />
-      <File FileName="Library/src/common/reflection/ReflectUtils.cs" Line="202" Column="1" />
-      <File FileName="Library/src/common/system/SpinLock.cs" Line="1" Column="1" />
-      <File FileName="Library/src/bridge/server/CLRBridgeServer.cs" Line="98" Column="1" />
+      <File FileName="Library/src/common/reflection/ReflectUtils.cs" Line="788" Column="89" />
     </Files>
   </MonoDevelop.Ide.Workbench>
   <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" />
