@@ -25,8 +25,8 @@
 #include "OS.hpp"
 
 #ifdef WINDOWS
-#include <windows.h>
 #include <winsock2.h>
+#include <windows.h>
 #include <ws2tcpip.h>
 #else
 #include <unistd.h>
@@ -53,7 +53,7 @@ int RTcpClient::read (byte* buffer, int bufferlen, int retries)
     {
         reconnect();
 #ifdef WINDOWS
-	int n = ::recv (_sock, (char*)((void*)wbuffer), bufferlen, 0);
+	int n = ::recv (_sock, (char*)((void*)buffer), bufferlen, 0);
 #else
 	int n = ::recv (_sock, (void*)buffer, bufferlen, 0);
 #endif	
@@ -75,7 +75,7 @@ int RTcpClient::write (const byte* buffer, int len, int retries)
     {
         reconnect();
 #ifdef WINDOWS
-	int n = send (_sock, (char*)((void*)wbuffer), len, 0);
+	int n = send (_sock, (char*)((void*)buffer), len, 0);
 #else
 	int n = ::write (_sock, (void*)buffer, len);
 #endif
