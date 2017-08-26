@@ -17,6 +17,33 @@ latest changes are reflected in the package.
 cd src/R
 R CMD INSTALL rDotNet
 ```
+## Unix
+Depending on how your system is setup, the above may require running
+as sudo on unix.  One should also make sure you have the mono SDK installed
+and **nuget** and **msbuild** in your path.   On OS X mono installs in:
+
+- /Library/Frameworks/Mono.framework/Commands
+
+and on Linux will depend on the package installer.  The essential thing is to 
+add the bin director(ies) where msbuild and nuget reside to your path. 
+
+## Windows
+Windows will have .NET installed by default.  However the various executables
+needed for building will not be in your path by default.  Add the path to **msbuild**
+and associated compilers to your **Path** variable in the control panel.  The path may 
+be in the following directory or something similar:
+
+- c:\Windows\Microsoft.NET\Framework64\v4.0.30319
+
+If you do not have a command line version of nuget installed, you will need to install nuget
+and place in your path.  Can find a command line version of nuget here:
+
+- https://dist.nuget.org/win-x86-commandline/latest/nuget.exe
+
+On windows you will also need to install the **Rtools** toolset for building R packages, available
+on CRAN.  Finally with all of the above installed and working, can run the **R CMD INSTALL** as
+indicated above.
+
 
 # Installing the Python Package
 ```sh
@@ -25,9 +52,7 @@ python3 setup.py install
 ```
 
 Depending on how your system is setup, the above may require running
-as sudo on unix.   On windows one should install the Rtools package
-available on CRAN and make sure that the Rtools commands are in your
-**Path**. 
+as sudo on unix. 
 
 
 
