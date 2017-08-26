@@ -20,8 +20,6 @@
 //      limitations under the License.
 //
 
-// [[Rcpp::depends(BH)]]
-
 #ifndef BUFFERED_SOCKET_WRITER
 #define BUFFERED_SOCKET_WRITER
 

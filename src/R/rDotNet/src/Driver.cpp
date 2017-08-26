@@ -20,7 +20,6 @@
 //      limitations under the License.
 //
 
-// [[Rcpp::depends(BH)]]
 
 #include <Rcpp.h>
 #include <cstdlib>

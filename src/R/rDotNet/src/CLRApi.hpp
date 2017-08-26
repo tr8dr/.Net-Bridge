@@ -20,7 +20,6 @@
 //      limitations under the License.
 //
 
-// [[Rcpp::depends(BH)]]
 
 #ifndef CLR_API
 #define CLR_API

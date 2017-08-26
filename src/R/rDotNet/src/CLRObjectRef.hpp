@@ -20,8 +20,6 @@
 //      limitations under the License.
 //
 
-// [[Rcpp::depends(BH)]]
-
 #ifndef CLR_OBJECT
 #define CLR_OBJECT
 

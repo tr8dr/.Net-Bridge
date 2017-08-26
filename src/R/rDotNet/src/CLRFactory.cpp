@@ -20,8 +20,6 @@
 //      limitations under the License.
 //
 
-// [[Rcpp::depends(BH)]]
-
 
 #include <cstdlib>
 #include "Common.hpp"

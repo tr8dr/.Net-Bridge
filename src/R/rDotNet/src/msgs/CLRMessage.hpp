@@ -20,8 +20,6 @@
 //      limitations under the License.
 //
 
-// [[Rcpp::depends(BH)]]
-
 #ifndef CLR_MESSAGE
 #define CLR_MESSAGE
 
