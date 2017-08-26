@@ -10,7 +10,7 @@
 \item{...}{a sequence of arguments to the method.  The arguments can either be fundamental types, vectors, matrices, or other objects.  Fuzzy matching will be applied, allowing imperfectly matched argument types to be converted, as may be needed given R's more basic type system.}
 }
 \description{
-This function calls a static method on a type.
+This function calls a static method on a .NET type (class).
 }
 \examples{
 \dontrun{

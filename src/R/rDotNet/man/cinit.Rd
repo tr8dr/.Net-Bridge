@@ -17,7 +17,7 @@ and functions one wants to call from R.}
 }
 \description{
 The function either connects to an existing running CLR bridge process at the given host:port or
-instantiates a new CLR server at the current host with the given port and server arguments.
+instantiates a new CLR server on the local computer with the given port and server arguments.
 }
 \details{
 If the .NET libraries are to be changed, the CLRServer process and R should be restarted.  CLR references

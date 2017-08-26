@@ -109,11 +109,11 @@
 }
 
 ## call static method on class
-.cstatic <- function (classname, method, ...)
+.cstatic <- function (classname, methodname, ...)
 {
     .initialize()	       
     argv = list(...)
-    internal_ccall_static(classname, method, argv)
+    internal_ccall_static(classname, methodname, argv)
 }
 
 ## create object through string ctor
@@ -124,22 +124,22 @@
 }
 
 ## call method on object
-.ccall <- function (obj, method, ...)
+.ccall <- function (obj, methodname, ...)
 {
     argv = list(...)
-    internal_ccall(obj, method, argv)
+    internal_ccall(obj, methodname, argv)
 }
 
 ## get property value
-.cget <- function (obj, property)
+.cget <- function (obj, propertyname)
 {
-    internal_cget(obj, property)
+    internal_cget(obj, propertyname)
 }
 
 ## set property value
-.cset <- function (obj, property, value)
+.cset <- function (obj, propertyname, value)
 {
-    internal_cset(obj, property, value)
+    internal_cset(obj, propertyname, value)
 }
 
 

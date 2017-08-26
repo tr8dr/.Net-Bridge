@@ -1,4 +1,5 @@
 \name{.cset}
+\alias{.cset}
 \alias{obj$Set(propertyname, value)}
 \title{Set a property value on a .NET object}
 \usage{

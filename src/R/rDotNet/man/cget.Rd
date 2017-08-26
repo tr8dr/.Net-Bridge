@@ -1,4 +1,5 @@
 \name{.cget}
+\alias{.cget}
 \alias{obj$Get(propertyname)}
 \title{Get a property value on a .NET object}
 \usage{
@@ -9,7 +10,7 @@
 \item{propertyname}{name of the property to retrieve}
 }
 \description{
-This function gets the value of a property on previously created .NET object.
+This function gets the value of a property on a previously created .NET object.
 }
 \examples{
 \dontrun{
