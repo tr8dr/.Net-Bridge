@@ -95,7 +95,6 @@ namespace bridge.server
                 if (e.SocketErrorCode == SocketError.AddressAlreadyInUse)
                 {
                     _log.Warn("another CLR server already running, exiting");
-                    Environment.Exit(0);
                 }
                 else
                     throw e;
