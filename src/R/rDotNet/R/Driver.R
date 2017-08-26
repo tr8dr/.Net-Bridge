@@ -167,9 +167,9 @@
 
 
 ## to string
-print.rDotNet <- function (obj, ...)
+print.rDotNet <- function (x, ...)
 {
-    tostr <- internal_ccall(obj, "ToString", list())
+    tostr <- internal_ccall(x, "ToString", list())
     objId <- attr(obj,'ObjectId')
     klass <- attr(obj, 'Classname')
     cat (sprintf("<dotnet obj: %d, class: %s, value: \"%s\">\n", objId, klass, tostr))

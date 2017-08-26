@@ -34,7 +34,7 @@
     <Compile Include="src\Main.cs" />
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\Library\Library.csproj">
+    <ProjectReference Include="..\Library\Net.Bridge.csproj">
       <Project>{73F807C6-62E6-4667-8E36-829DF0C6FFB3}</Project>
       <Name>Net.Bridge</Name>
     </ProjectReference>

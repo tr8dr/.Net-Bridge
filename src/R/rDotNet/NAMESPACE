@@ -1,4 +1,5 @@
 useDynLib(rDotNet,.registration = TRUE)
-exportPattern("^[^\\.]")
-export(.cinit,.cnew, .ccall, .ctor, .cstatic, .cget, .cset, "$.rDotNet", "[.rDotNet", print.rDotNet)
+export(.cinit,.cnew, .ccall, .ctor, .cstatic, .cget, .cset)
+exportMethods("$.rDotNet", "[.rDotNet", print.rDotNet)
+
 importFrom(Rcpp, evalCpp)
