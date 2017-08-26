@@ -40,7 +40,7 @@ class RValue
     }
 
     RValue ()
-      : _e(nullptr), _count(nullptr) { }
+      : _e(NULL), _count(NULL) { }
 
     RValue (const RValue& o)
       : _e(o._e), _count(o._count)
@@ -77,7 +77,7 @@ class RValue
   
     void remove ()
     {
-        if (_count == nullptr)
+        if (_count == NULL)
 	    return;
         if (--(*_count) > 0)
 	    return;

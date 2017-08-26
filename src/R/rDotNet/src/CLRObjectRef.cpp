@@ -97,7 +97,7 @@ void CLRObjectRef::deserialize (BufferedSocketReader& stream)
     SEXP xgc = PROTECT(R_MakeExternalPtr((void*)gc, R_NilValue, R_NilValue));
     vobj.attr("gc") = xgc;
 
-    R_RegisterCFinalizerEx(xgc, ObjectFinalizer, Rboolean::TRUE);
+    R_RegisterCFinalizerEx(xgc, ObjectFinalizer, TRUE);
 
     _object = RValue(Rcpp::wrap(vobj));
     UNPROTECT(1);
