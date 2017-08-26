@@ -21,50 +21,68 @@
 //
 
 
-#include "io/TcpClient.hpp"
+#include "TcpClient.hpp"
 #include "OS.hpp"
 
 #ifdef WINDOWS
 #include <windows.h>
 #include <winsock2.h>
 #include <ws2tcpip.h>
+#else
+#include <unistd.h>
+#include <sys/types.h>
+#include <sys/socket.h>
+#include <netinet/in.h>
+#include <netdb.h> 
 #endif
 
+#include <Rcpp.h>
 #include <stdlib.h>
 #include <stdexcept>
+#include <iostream>
+#include <sstream>
 
 using namespace std;
+using namespace Rcpp;
 
-#ifdef WINDOWS
 
 // read data into buffer 
 int RTcpClient::read (byte* buffer, int bufferlen, int retries)
 {
-    char* wbuffer = (char*)((void*)buffer);
     for (int i = 0 ; i <= retries ; i++)
     {
         reconnect();
-	int n = recv (_sock, wbuffer, bufferlen, 0);
+#ifdef WINDOWS
+	int n = ::recv (_sock, (char*)((void*)wbuffer), bufferlen, 0);
+#else
+	int n = ::recv (_sock, (void*)buffer, bufferlen, 0);
+#endif	
 	if (n >= 0)
 	    return n;
 	else
 	    close();
     }
 
-	return 0;
+    return 0;
 }
+
+
 
 // write data 
 int RTcpClient::write (const byte* buffer, int len, int retries)
 {
-    char* wbuffer = (char*)((void*)buffer);
     for (int i = 0 ; i <= retries ; i++)
     {
         reconnect();
-	int n = send (_sock, wbuffer, len, 0);
+#ifdef WINDOWS
+	int n = send (_sock, (char*)((void*)wbuffer), len, 0);
+#else
+	int n = ::write (_sock, (void*)buffer, len);
+#endif
 	if (n > 0)
+	{
 	    return n;
-	else
+	} else
 	    close();
     }
     
@@ -74,24 +92,32 @@ int RTcpClient::write (const byte* buffer, int len, int retries)
 // close socket
 void RTcpClient::close ()
 {
-  if (_sock < 0)
+    if (_sock < 0)
         return;
-	
+
+    throw std::runtime_error ("closing connection\n");
+#ifdef WINDOWS
     closesocket (_sock);
     _sock = -1;
     WSACleanup();
+#else
+    ::close (_sock);
+    _sock = -1;
+#endif
 }
   
 
 // reconnect if connection was broken 
 void RTcpClient::reconnect ()
 {
-  if (_sock < 0)
-      return;
+    if (_sock >= 0)
+        return;
 
-  connect(_hostname, _port);
+    connect(_hostname, _port);
 }
 
+
+#ifdef WINDOWS
 
 // connect  
 void RTcpClient::connect (const std::string& host, int port)
@@ -148,5 +174,30 @@ void RTcpClient::connect (const std::string& host, int port)
 
 #else
 
+// connect  
+void RTcpClient::connect (const std::string& host, int port)
+{
+    // create socket
+    _sock = socket(AF_INET, SOCK_STREAM, 0);
+    if (_sock < 0)
+        throw runtime_error("unable to create socket");
+
+    // lookup host address
+    struct hostent* server = ::gethostbyname(host.c_str());
+    if (server == NULL)
+        throw runtime_error("unable to lookup or locate CLR host on DNS");
+
+    // create address
+    struct sockaddr_in addr;
+    bzero((void *)&addr, sizeof(addr));
+    addr.sin_family = AF_INET;
+    bcopy((void *)server->h_addr, (void *)&addr.sin_addr.s_addr, server->h_length);
+    addr.sin_port = htons(port);
+
+    // create connection
+    int err = ::connect (_sock, (struct sockaddr *)&addr, sizeof(addr));
+    if (err < 0)
+        close();
+}
 
 #endif

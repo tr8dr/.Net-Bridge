@@ -7,8 +7,8 @@ Author: Jonathan Shore <jonathan.shore@gmail.com>
 Maintainer: Jonathan Shore <jonathan.shore@gmail.com>
 Description: r dotnet interface
 License: Apache 2.0
-Depends: Rcpp, BH
-Imports: Rcpp (>= 0.12.3), BH (>= 1.62.0)
-LinkingTo: Rcpp, BH
+Depends: Rcpp
+Imports: Rcpp (>= 0.12.3)
+LinkingTo: Rcpp
 ByteCompile: true
 RoxygenNote: 6.0.1

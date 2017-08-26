@@ -26,8 +26,9 @@
 #define BUFFERED_SOCKET_WRITER
 
 #include <cstdlib>
+#include <stdexcept>
 #include <Rcpp.h>
-#include "io/TcpClient.hpp"
+#include "TcpClient.hpp"
 
 using namespace std;
 using namespace Rcpp;
@@ -194,7 +195,9 @@ class BufferedSocketWriter
     // flush stream
     void flush ()
     {
-       _sock->write(_buffer, _len);
+       int done = _sock->write(_buffer, _len);
+       if (done < _len)
+	   throw std::runtime_error("problem communicating with CLR, could not complete message");
        _len = 0;
     }
 

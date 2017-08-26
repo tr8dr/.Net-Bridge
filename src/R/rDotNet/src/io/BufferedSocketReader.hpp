@@ -27,7 +27,7 @@
 
 #include <cstdlib>
 #include <Rcpp.h>
-#include "io/TcpClient.hpp"
+#include "TcpClient.hpp"
 
 using namespace std;
 using namespace Rcpp;

@@ -29,7 +29,7 @@
 #include "CLRFactory.hpp"
 #include "CLRObjectRef.hpp"
 #include "msgs/CLRMessage.hpp"
-#include "io/TcpClient.hpp"
+#include "TcpClient.hpp"
 #include "io/BufferedSocketReader.hpp"
 #include "io/BufferedSocketWriter.hpp"
 
