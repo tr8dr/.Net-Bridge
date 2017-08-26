@@ -84,8 +84,22 @@ namespace bridge.server
 			_log.Info("starting execution server listener on port: " + _port);
 			var mask = new IPEndPoint(IPAddress.Any, _port);
 			_server_socket = new Socket(AddressFamily.InterNetwork, SocketType.Stream, ProtocolType.Tcp);
-			_server_socket.Bind(mask);
-			_server_socket.Listen(10);
+
+            try
+            {
+                _server_socket.Bind(mask);
+                _server_socket.Listen(10);
+            }
+            catch (SocketException e)
+            {
+                if (e.SocketErrorCode == SocketError.AddressAlreadyInUse)
+                {
+                    _log.Warn("another CLR server already running, exiting");
+                    Environment.Exit(0);
+                }
+                else
+                    throw e;
+            }
 		}
 
 
