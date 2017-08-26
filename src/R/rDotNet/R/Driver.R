@@ -81,8 +81,8 @@
                 server
             else
                 mono)
-    
-            system2 (exe, args, wait=FALSE, stderr=F, stdout=F)
+
+            system2 (exe, args, wait=FALSE, stderr=FALSE, stdout=FALSE)
         }
         
         internal_cinit(host, port)
