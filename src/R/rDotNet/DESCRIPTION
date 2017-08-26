@@ -1,7 +1,7 @@
 Package: rDotNet
 Type: Package
 Title: rDotNet
-Version: 1.0
+Version: 0.9.0
 Date: 2010-11-01
 Author: Jonathan Shore <jonathan.shore@gmail.com>
 Maintainer: Jonathan Shore <jonathan.shore@gmail.com>
