@@ -49,7 +49,7 @@
         ## test to see whether there is a CLR process already running
         if (internal_ctest_connection (host, port))
         {
-            message ("CLR server already running; terminate the CLRserver process if restarting with a different DLL is desired")
+            message ("NOTE: CLR server already running; terminate the CLRserver process if using a different DLL is desired")
         }
 
         ## otherwise start server
@@ -82,6 +82,7 @@
             else
                 mono)
 
+            message ("NOTE: starting CLR server")
             system2 (exe, args, wait=FALSE, stderr=FALSE, stdout=FALSE)
         }
         
