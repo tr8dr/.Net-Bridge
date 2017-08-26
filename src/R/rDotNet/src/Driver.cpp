@@ -43,8 +43,8 @@ bool internal_ctest_connection(const std::string& host, int port)
 {
     try
     {
-        auto tcp = new RTcpClient (host, port);
-	return tcp != nullptr;
+        RTcpClient tcp (host, port);
+	return tcp.is_connected();
     }
     catch (...)
     {
