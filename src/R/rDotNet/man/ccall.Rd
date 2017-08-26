@@ -1,5 +1,6 @@
 \name{.ccall}
 \alias{.ccall}
+\alias{$.rDotNet}
 \title{call a method on a .NET object}
 \usage{
 .ccall(obj, methodname, ...)

@@ -170,7 +170,7 @@
 print.rDotNet <- function (x, ...)
 {
     tostr <- internal_ccall(x, "ToString", list())
-    objId <- attr(obj,'ObjectId')
-    klass <- attr(obj, 'Classname')
+    objId <- attr(x,'ObjectId')
+    klass <- attr(x, 'Classname')
     cat (sprintf("<dotnet obj: %d, class: %s, value: \"%s\">\n", objId, klass, tostr))
 }

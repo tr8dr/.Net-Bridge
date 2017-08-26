@@ -12,5 +12,4 @@ Imports: Rcpp (>= 0.12.3)
 LinkingTo: Rcpp
 ByteCompile: true
 RoxygenNote: 6.0.1
-BinaryFiles: inst/server/CLRServer.exe, inst/server/MathNet.Numerics.dll, inst/server/Net.Bridge.dll
 
