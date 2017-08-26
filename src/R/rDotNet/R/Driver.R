@@ -64,7 +64,7 @@
             server.args <- c(server.args, "-dll", expand.dll(dll.env))
             
         args <- (if (.Platform$OS.type == "windows")
-            c("-url", sprintf("svc://%s:%d/", host, port, server, server.args))
+            c("-url", sprintf("svc://%s:%d/", host, port), server.args)
         else
             c("--llvm", server, "-url", sprintf("svc://%s:%d/", host, port), server.args))
 
@@ -72,8 +72,8 @@
             server
         else
             mono)
-    
-        system2 (exe, args, wait=FALSE, stderr=F, stdout=F) 
+
+        system2 (exe, args, wait=FALSE, stderr=FALSE, stdout=FALSE) 
         internal_cinit(host, port)
         initialized <<- TRUE
     }
