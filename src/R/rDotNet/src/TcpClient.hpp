@@ -44,6 +44,9 @@ class RTcpClient
       connect (host, port);
     }
 
+    // determine if connected
+    bool is_connected ();
+
     // read data into buffer 
     int read (byte* buffer, int bufferlen, int retries = 0);
 

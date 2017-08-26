@@ -46,6 +46,12 @@ using namespace std;
 using namespace Rcpp;
 
 
+// determine if is connected based on socket
+bool RTcpClient::is_connected()
+{
+    return _sock >= 0;
+}
+
 // read data into buffer 
 int RTcpClient::read (byte* buffer, int bufferlen, int retries)
 {
