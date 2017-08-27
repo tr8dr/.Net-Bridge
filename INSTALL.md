@@ -8,15 +8,14 @@ Both the R and Python packages depend on the .NET Net.Bridge library and CLRServ
 distribution, sitting in **bin/**.  The Python package build copies the files in ```bin/Debug``` into the packages
 during the install.
 In the case of R, the **rDotNet/inst/server** directory contains a
-copy of the build.  If you want to modify the .NET server code or
-library you will want to copy into **rDotNet/inst/server** so that the
-latest changes are reflected in the package.
+condensed copy of the library and server source files, which are built
+during installation.  
 
 # Installing the R Package
-```sh
-cd src/R
-R CMD INSTALL rDotNet
-```
+In general one installs this package like any other R package.
+However .NET should be present on the machine and in the path.  See
+the OS specific installation instructions below.
+
 ## Unix
 Depending on how your system is setup, the above may require running
 as sudo on unix.  One should also make sure you have the mono SDK installed
@@ -24,14 +23,21 @@ and **nuget** and **msbuild** in your path.   On OS X mono installs in:
 
 - /Library/Frameworks/Mono.framework/Commands
 
-and on Linux will depend on the package installer.  The essential thing is to 
-add the bin director(ies) where msbuild and nuget reside to your path. 
+and on Linux will depend on the package installer.  The  bin directory
+where msbuild and nuget reside must be added to your path.  Before
+running the package install, check that **nuget** and **msbuild**
+can be run from the command line, then run the following:
+
+```sh
+R CMD INSTALL rDotNet
+```
 
 ## Windows
 Windows will have .NET installed by default.  However the various executables
-needed for building will not be in your path by default.  Add the path to **msbuild**
-and associated compilers to your **Path** variable in the control panel.  The path may 
-be in the following directory or something similar:
+needed for building may not be in your path.  Adjust your path so that
+ **msbuild** and associated compilers are visible (you can adjust
+ **Path** settings in the control panel).  The path to the various
+ tools may be in the following directory or something similar:
 
 - c:\Windows\Microsoft.NET\Framework64\v4.0.30319
 
@@ -43,6 +49,12 @@ and place in your path.  Can find a command line version of nuget here:
 On windows you will also need to install the **Rtools** toolset for building R packages, available
 on CRAN.  Finally with all of the above installed and working, can run the **R CMD INSTALL** as
 indicated above.
+
+Finally once all of the above is installed and in your path, run:
+
+```sh
+R CMD INSTALL rDotNet
+```
 
 
 # Installing the Python Package
