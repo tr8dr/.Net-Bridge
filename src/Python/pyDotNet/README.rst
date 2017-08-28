@@ -1,5 +1,6 @@
+
 Seemless Python <-> .NET interop
-======================
+================================
 
 pyDotNet allows Python  to access .NET libraries, with the .NET library running either locally or on a remote machine. From Python one can:
 
@@ -10,9 +11,7 @@ pyDotNet allows Python  to access .NET libraries, with the .NET library running 
 * access indexing members
 
 The packages is part of a larger codebase providing extensions for
-both R and python `.NET Bridge <https://github.com/tr8dr/.Net-Bridge/>`_. 
-
-The following data types in arguments are supported:
+both R and python `.NET Bridge <https://github.com/tr8dr/.Net-Bridge/>`_.  The following data types in arguments are supported:
 
 * .NET objects
 * integers (16, 32, 64) bit
@@ -25,14 +24,16 @@ The following data types in arguments are supported:
 * vectors (with optional named index)
 * matrices (with optional named row and column indices)
 
- ----
+
 
 The History
----------
+-----------
+
 Some years ago, wrote the .NET bridge as part of a much larger research and trading codebase.  Given interest from others on the net, made an effort to extract the bridge and related classes from the much larger codebase.   While the .NET Bridge codebase is a factor of 100x smaller, there may yet be classes that could be removed, to make this even tighter.
 
 How It Works
------------
+------------
+
 The Python package communicate with the .NET side through simple client / server interactions.  Your .NET libraries are loaded by a runner ``CLRServer.exe`` that provides a TCP-based API, giving full visibility into your library(ies). 
 
 On first use from Python, the package will start the .NET bridge server (or alternatively connect to an existing server).  If the server is started from within VisualStudio, Xamarin Studio, or other tool, can be run in debug mode, so that you can debug your libraries as they are called from  Python.
@@ -46,8 +47,11 @@ For example if a class has 2 overloaded public methods "F":
 
 where Direction is ``enum Direction { Up, Down }``.  If the object is called from python as:
 
+.. code-block:: python
+		
     obj.F ('Up', [0.1, 0.2, 3.0, 3.1, 3.2])
-    
+..
+
 the second method would be chosen given that 'Up' is convertible to ``Direction.Up`` and the numeric array is convertible to ``Vector<double>``.
 
 ## Initialization
@@ -61,21 +65,27 @@ The .NET bridge server (CLRServer.exe) will not have access to your code unless 
 Initializing the CLR with a DLL is done as follows:
 
 
+.. code-block:: python
+		
     ## initialization
     clr = CLRApi (dll="~/Dev/mymodels.dll")
 
     ## create an object and call a method
     obj <- clr.new ("NormalDistribution1D", 0.0, 1.0)
     obj.F (0.1)
+..
+
+Example
+-------
+
+Assuming the following (contrived) .NET classes were declared in
+namespace **com.stg.dummy**:
 
 
-## Example
-Assuming the following (contrived) .NET classes:
+.. code-block:: C#
 
-    namespace com.stg.dummy 
-    {
         class Point (double X, double Y);
-    
+
         class Circle
         {
             Circle (double radius)
@@ -113,12 +123,13 @@ Assuming the following (contrived) .NET classes:
                 return PointsFor(npoints).ToArray();
             }        
         }
-    }
-
+..
 
 
 The python API provides CLR as proxy objects almost indistinguishable from python objects.  One can interact with normal python syntax.  Here is how we could call the above from python:
 
+.. code-block:: python
+		
     clr = CLRApi.get()
 
     ## create circle object
@@ -138,16 +149,19 @@ The python API provides CLR as proxy objects almost indistinguishable from pytho
 
     ## setting a property
     circle.Radius = 20
+..
 
 
 Installation
-=======
+=============
+
 In general one installs this package like any other python package.
 However .NET should be present on the machine and in the path.  See
 the OS specific installation instructions below.
 
 Unix
 ----
+
 Depending on how your system is setup, the above may require running
 as sudo on unix.  One should also make sure you have the mono SDK installed
 and **nuget** and **msbuild** in your path.   On OS X mono installs in:
@@ -160,13 +174,18 @@ running the package install, check that **nuget** and **msbuild**
 can be run from the command line, then run the following:
 
 
+.. code-block:: sh
+		
     python setup.py install
-    
+..
+
 or alternatively using pip. Depending on how your system is setup, the above may require
 running under sudo. 
 
 
-## Windows
+Windows
+-------
+
 Windows will have .NET installed by default.  However the various executables
 needed for building may not be in your path.  Adjust your path so that
  **msbuild** and associated compilers are visible (you can adjust
@@ -182,7 +201,10 @@ and place in your path.  Can find a command line version of nuget here:
 
 \Finally with all of the above installed and working, can run the installation as follows:
 
+.. code-block:: sh
+		
     python setup.py install
+..
 
 or alternatively using pip.
 
