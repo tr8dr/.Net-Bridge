@@ -66,6 +66,6 @@ class SocketUtils:
             s.connect ((server, port))
             s.close()
             return True
-        except socket.error, e:
+        except e:
             s.close()
             return False

@@ -76,6 +76,9 @@ if msbuild and nuget:
     
     os.makedirs (targetdir)
     shutil.copytree(srcdir + "/bin/Debug".replace("/", os.sep), targetdir + "/server".replace("/", os.sep))
+    shutil.rmtree(srcdir + "/bin".replace("/", os.sep))
+    shutil.rmtree(srcdir + "/obj".replace("/", os.sep))
+    shutil.rmtree(srcdir + "/packages".replace("/", os.sep))
 else:
     print ("warning: CLR server not built as could not find nuget or msbuild in the path, please add to path and rebuild")
     
@@ -84,7 +87,7 @@ else:
 # now do main setup
 setup(
     name = 'pydotnet',
-    version = '0.9.0',
+    version = '0.9.1',
     description = ' Low-level interface to .NET VM.  Can create .NET object, call methods, get or set properties, call static functions, etc.',
     author = 'Jonathan Shore',
     author_email = 'jonathan.shore@gmail.com',
@@ -100,11 +103,16 @@ setup(
         'Development Status :: 4 - Beta',
         'Intended Audience :: Developers',
         'Topic :: Software Development :: Object Brokering',
-        'License :: OSI Approved :: Apache License',
+        'Topic :: Software Development :: Libraries :: Application Frameworks',
+        'License :: OSI Approved :: Apache Software License',
         'Programming Language :: Python :: 3',
         'Programming Language :: Python :: 3.3',
         'Programming Language :: Python :: 3.4',
-        'Programming Language :: Python :: 3.5'],
+        'Programming Language :: Python :: 3.5',
+        'Programming Language :: Python :: 3 :: Only',
+        'Operating System :: MacOS :: MacOS X',
+        'Operating System :: POSIX :: Linux',
+        'Operating System :: Microsoft :: Windows'],
 
     extras_require={
         'dev': ['check-manifest'],
