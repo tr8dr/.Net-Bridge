@@ -79,7 +79,7 @@ obj <- .cnew ("NormalDistribution1D", 0.0, 1.0)
 obj$F (0.1)
 ```
 
-In python, there is one approach to initialization, through the creation of a ```CLRApi``` instance:
+In python, the CLR is initialized using the ```CLRApi``` constructor.  .NET object can then be created using the ```new(classname, ...)``` method.  
 ```python
 clr = CLRApi (dll="~/Dev/mymodels.dll")
 
