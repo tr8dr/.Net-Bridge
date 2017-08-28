@@ -188,10 +188,8 @@ and place in your path.  Can find a command line version of nuget here:
 - https://dist.nuget.org/win-x86-commandline/latest/nuget.exe
 
 On windows you will also need to install the **Rtools** toolset for building R packages, available
-on CRAN.  Finally with all of the above installed and working, can run the **R CMD INSTALL** as
-indicated above.
-
-Finally once all of the above is installed and in your path, run:
+on CRAN.  Finally with all of the above installed and working, can run the installation as
+follows:
 
 ```sh
 R CMD INSTALL rDotNet
