@@ -83,18 +83,33 @@ else:
 
 # now do main setup
 setup(
-    name='pydotnet',
-    packages = ['pydotnet'],
+    name = 'pydotnet',
     version = '0.9.0',
     description = ' Low-level interface to .NET VM.  Can create .NET object, call methods, get or set properties, call static functions, etc.',
     author = 'Jonathan Shore',
     author_email = 'jonathan.shore@gmail.com',
-    url = 'https://github.com/tr8dr/.Net-Bridge',
-    download_url = 'https://github.com/tr8dr/.Net-Bridge/tree/master/archives/python/0.9.0.tar.gz',
-    keywords = ['.NET', 'interop']
+    url = 'https://github.com/tr8dr/.Net-Bridge/tree/master/src/Python/pyDotNet',
+    keywords = ['.NET', 'interop'],
+    
     packages = find_package_names(),
     package_dir = find_package_mapping(),
     setup_requires = ['pandas', 'numpy'], 
-    include_dirs=[numpy.get_include()]
+    include_dirs=[numpy.get_include()],
+
+    classifiers = [
+        'Development Status :: 4 - Beta',
+        'Intended Audience :: Developers',
+        'Topic :: Software Development :: Object Brokering',
+        'License :: OSI Approved :: Apache License',
+        'Programming Language :: Python :: 3',
+        'Programming Language :: Python :: 3.3',
+        'Programming Language :: Python :: 3.4',
+        'Programming Language :: Python :: 3.5'],
+
+    extras_require={
+        'dev': ['check-manifest'],
+        'test': ['coverage']
+    },
+        
 )
 
