@@ -31,18 +31,31 @@ import unittest
 import numpy as np
 import pandas as pd
 import subprocess
+import socket
 
 
 
 class CLRApi:
     """
-    CLR Bridge Api
+    CLR Bridge Api: This interface gives access to the .NET CLR, allowing one to create
+    objects, call methods, get / set properties, etc.
+
+    Typical usage is to create an object with api.new (classname, ...) and then interact
+    with the returned object proxy.
     """
 
     Classes = {}
     Api = None
 
     def __init__(self, hostname="", port=56789, dll=None, server_args=[]):
+        """
+        Initialize CLR API
+
+        :param hostname: the name of the host to connect to (defaults to localhost)
+        :param port: the port # to connect to (defaults to 56789)
+        :param dll: an optional .NET dll to load (defaults to None)
+        :param server_args: an optional list of CLRServer arguments         
+        """
         self.hostname = hostname
         self.port = port
         self.cin = None
@@ -82,7 +95,7 @@ class CLRApi:
         self.cin.api = self
         self.cout.api = self
 
-
+        
     def close(self):
         """
         Close the connection
@@ -95,7 +108,10 @@ class CLRApi:
 
     def new(self, classname: str, *args):
         """
-        create new CLR object
+        create a new CLR object
+
+        :param classname: fully qualified or partially qualified class name (i.e. 'com.stg.models.MyClass' or 'MyClass')
+        :param *args: optional arguments to the constructor
         """
         ## create object request
         req = CLRCreateObject (classname, args)
@@ -109,6 +125,10 @@ class CLRApi:
     def callstatic(self, classname: str, methodname: str, *args):
         """
         call class method on CLR-side object
+
+        :param classname: fully qualified or partially qualified class name (i.e. 'com.stg.models.MyClass' or 'MyClass')
+        :param methodname: name of method / function to call
+        :param *args: arguments to method / function
         """
         ## create object request
         req = CLRCallStaticMethod (classname, methodname, args)
@@ -121,7 +141,11 @@ class CLRApi:
 
     def call(self, objectId: int, methodname: str, *args):
         """
-        call method on CLR-side object
+        call method on CLR-side object (this is only used internally)
+
+        :param objectId: object ID of previously created object
+        :param methodname: name of method / function to call
+        :param *args: arguments to method / function        
         """
         ## create object request
         req = CLRCallMethod (objectId, methodname, args)
@@ -135,13 +159,18 @@ class CLRApi:
     def ctor(self, ctorexpr: str):
         """
         create class from ctor expression (i.e.  "ZTime(12,30,22,100)")
+
+        :param ctorexpr: expression representing class contructor to be called (for example 'ZTime(12,30,22,100)')
         """
         return self.callstatic ("com.pydotnet.common.reflection.Creator", "NewByCtor", ctorexpr)
 
 
     def getProperty(self, objectId: int, property: str):
         """
-        get property on CLR-side object
+        get property on CLR-side object (this is only used internally)
+
+        :param objectId: object ID of previously created object
+        :param property: name of property to get
         """
         ## create object request
         req = CLRGetProperty (objectId, property)
@@ -154,7 +183,11 @@ class CLRApi:
 
     def setProperty(self, objectId: int, property: str, value):
         """
-        set property on CLR-side object
+        set property on CLR-side object (this is only used internally)
+
+        :param objectId: object ID of previously created object
+        :param property: name of property to set
+        :param value: value of property to be set
         """
         ## create object request
         req = CLRSetProperty (objectId, property, value)
@@ -167,7 +200,10 @@ class CLRApi:
 
     def getIndexed(self, objectId: int, idx: int):
         """
-        get indexed on CLR-side object
+        get indexed on CLR-side object (this is only used internally)
+
+        :param objectId: object ID of previously created object
+        :param idx: index to retrieve
         """
         ## create object request
         req = CLRGetIndexed (objectId, idx)
@@ -180,14 +216,14 @@ class CLRApi:
 
     def protect (self, objectId: int):
         """
-        protect an object from GC
+        protect an object from GC (this is only used internally)
         """
         pass
 
 
     def release (self, objectId: int):
         """
-        release an object for GC
+        release an object for GC (this is only used internally)
         """
         req = CLRRelease (objectId)
         CLRMessage.write (self.cout, req)
@@ -196,7 +232,7 @@ class CLRApi:
 
     def classFor (self, classname: str):
         """
-        get class template for named type
+        get class template for named type (this is only used internally)
         """
         klass = CLRApi.Classes.get (classname, None)
         if klass is not None:
@@ -216,7 +252,7 @@ class CLRApi:
 
     def objectFor (self, objectId: int, classname: str):
         """
-        get object proxy for CLR obj
+        get object proxy for CLR obj (this is only used internally)
         """
         klass = self.classFor(classname)
         obj = klass (objectId, classname, self)
@@ -464,15 +500,8 @@ class TestCLRMessage(unittest.TestCase):
         ## ints
         import pydotnet.clr.CLRInitialization
         clr = CLRApi()
-        obj = clr.new ("FDate", 2014,1,1)
-        print (obj.ToString())
-
-    def test_api2(self):
-        ## ints
-        import pydotnet.clr.CLRInitialization
-        clr = CLRApi()
-        obj = clr.new ("com.pydotnet.common.time.ZTime", 12,30,00,100)
-        print (obj.Hour)
+        obj = clr.new ("DateTime", 2014,1,1)
+        self.assertTrue(obj.Year == 2014)
 
 
 if __name__ == '__main__':

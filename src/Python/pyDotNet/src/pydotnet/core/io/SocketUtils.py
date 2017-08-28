@@ -54,3 +54,18 @@ class SocketUtils:
                     time.sleep(retrygap)
 
 
+    def is_running (host, port):
+        """
+        Determine whether server at host:port is operational
+
+        :param host: hostname of server
+        :param port: port # of server
+        """
+        s = socket.socket()
+        try:
+            s.connect ((server, port))
+            s.close()
+            return True
+        except socket.error, e:
+            s.close()
+            return False
