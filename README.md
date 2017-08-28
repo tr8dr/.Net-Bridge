@@ -25,8 +25,7 @@ The following data types in arguments are supported:
 - vectors (with optional named index)
 - matrices (with optional named row and column indices)
 
-## The History
-Some years ago, wrote the .NET bridge as part of a much larger research and trading codebase.  Given interest from others on the net, made an effort to extract the bridge and related classes from the much larger codebase.   While the .NET Bridge codebase is a factor of 100x smaller, there may yet be classes that could be removed, to make this even tighter.
+Needless to say, the framework supports code written in C#, F#, or other .NET languages.  Access to types is made through reflection and does not need to be language aware.
 
 ## How It Works
 The R or Python packages communicate with the .NET side through simple client / server interactions.  Your .NET libraries are loaded by a runner ```CLRServer.exe``` that provides a TCP-based API, giving full visibility into your library(ies). 
