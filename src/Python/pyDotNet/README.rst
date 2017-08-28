@@ -190,7 +190,7 @@ Windows will have .NET installed by default.  However the various executables
 needed for building may not be in your path.  Adjust your path
 so that **msbuild** and associated compilers are visible (you can
 adjust **Path** settings in the control panel).  The path to the various
- tools may be in the following directory or something similar:
+tools may be in the following directory or something similar:
 
 *  ``c:\Windows\Microsoft.NET\Framework64\v4.0.30319``
 
