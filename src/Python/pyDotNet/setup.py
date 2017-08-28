@@ -87,7 +87,7 @@ else:
 # now do main setup
 setup(
     name = 'pydotnet',
-    version = '0.9.1',
+    version = '0.9.2',
     description = ' Low-level interface to .NET VM.  Can create .NET object, call methods, get or set properties, call static functions, etc.',
     author = 'Jonathan Shore',
     author_email = 'jonathan.shore@gmail.com',
@@ -96,7 +96,6 @@ setup(
     
     packages = find_package_names(),
     package_dir = find_package_mapping(),
-    setup_requires = ['pandas', 'numpy'], 
     include_dirs=[numpy.get_include()],
 
     classifiers = [
@@ -112,12 +111,6 @@ setup(
         'Programming Language :: Python :: 3 :: Only',
         'Operating System :: MacOS :: MacOS X',
         'Operating System :: POSIX :: Linux',
-        'Operating System :: Microsoft :: Windows'],
-
-    extras_require={
-        'dev': ['check-manifest'],
-        'test': ['coverage']
-    },
-        
+        'Operating System :: Microsoft :: Windows']        
 )
 
