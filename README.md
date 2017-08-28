@@ -159,7 +159,7 @@ circle$Set("Radius, 20)
 
 ```
 
-The python API provides CLR as proxy objects almost indistinguishable from python objects.  One can interact with normal python syntax.  Here is how we could call the above from python:
+The python API provides .NET objects as first class citizens in Python as proxy objects.  One can interact with these proxy objects with normal python syntax.  Here is how we could call the above from python:
 ```python
 clr = CLRApi.get()
 
