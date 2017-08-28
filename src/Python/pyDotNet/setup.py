@@ -82,14 +82,19 @@ else:
 
 
 # now do main setup
-setup(name='pydotnet',
-      version = '0.9.0',
-      description = 'pyDotNet',
-      author = 'Jonathan Shore',
-      author_email = 'jonathan.shore@gmail.com',
-      packages = find_package_names(),
-      package_dir = find_package_mapping(),
-      setup_requires = ['pandas', 'numpy'], 
-      include_dirs=[numpy.get_include()]
-     )
+setup(
+    name='pydotnet',
+    packages = ['pydotnet'],
+    version = '0.9.0',
+    description = ' Low-level interface to .NET VM.  Can create .NET object, call methods, get or set properties, call static functions, etc.',
+    author = 'Jonathan Shore',
+    author_email = 'jonathan.shore@gmail.com',
+    url = 'https://github.com/tr8dr/.Net-Bridge',
+    download_url = 'https://github.com/tr8dr/.Net-Bridge/tree/master/archives/python/0.9.0.tar.gz',
+    keywords = ['.NET', 'interop']
+    packages = find_package_names(),
+    package_dir = find_package_mapping(),
+    setup_requires = ['pandas', 'numpy'], 
+    include_dirs=[numpy.get_include()]
+)
 
