@@ -9,7 +9,7 @@ pyDotNet allows Python  to access .NET libraries, with the .NET library running 
 
 The packages is part of a larger codebase providing extensions for both R and python:
 
-- [.NET Bridget](https://github.com/tr8dr/.Net-Bridge/) (.NET interop code base)
+- [.NET Bridge](https://github.com/tr8dr/.Net-Bridge/) (.NET interop code base)
 - [rDotNet](https://github.com/tr8dr/.Net-Bridge/tree/master/src/R/rDotNet) (.NET interop for R)
 - [pyDotNet](https://github.com/tr8dr/.Net-Bridge/tree/master/src/Python/pyDotNet) (.NET interop for Python)
 
