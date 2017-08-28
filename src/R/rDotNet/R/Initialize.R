@@ -9,7 +9,7 @@
     if (file.exists(server))
         return()
 
-    message ("attempting to build CLR server, one time setup")
+    packageStartupMessage ("attempting to build CLR server, one time setup")
     if (Sys.which("nuget") == "")
     {
         warning ("could not find nuget in path; will not be able to use rDotNet unless corrected and rebuilt")
@@ -25,10 +25,10 @@
     cwd <- getwd()
     setwd(sprintf("%s/server", packagedir))
 
-    message ("getting dependent packages")
+    packageStartupMessage ("getting dependent packages")
     system2 ("nuget", "restore", wait=TRUE, stderr=TRUE, stdout=TRUE)
         
-    message ("building project")
+    packageStartupMessage ("building project")
     system2 ("msbuild", wait=TRUE, stderr=TRUE, stdout=TRUE)
 
     setwd(cwd)

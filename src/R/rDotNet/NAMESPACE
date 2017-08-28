@@ -1,4 +1,7 @@
 useDynLib(rDotNet,.registration = TRUE)
 export(.cinit,.cnew, .ccall, .ctor, .cstatic, .cget, .cset,"$.rDotNet", "[.rDotNet", print.rDotNet)
+S3method("$", rDotNet)
+S3method("[", rDotNet)
+S3method(print, rDotNet)
 
 importFrom(Rcpp, evalCpp)
