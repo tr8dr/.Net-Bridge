@@ -182,5 +182,12 @@ circle.Area
 circle.Radius = 20
 ```
 
+# Repository Locations
+The R and Python packages were uploaded and approved by CRAN and PyPi respectively.  The packages reside at:
+
+- https://cran.r-project.org/package=rDotNet (R package)
+- https://pypi.python.org/pypi?name=pydotnet&version=0.9.2&:action=display (Python package)
+
+
 # Installation
 Please refer to the [Installation document](https://github.com/tr8dr/.Net-Bridge/tree/master/INSTALL.md).
