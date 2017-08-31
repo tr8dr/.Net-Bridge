@@ -41,11 +41,11 @@ using bridge.server.ctrl;
 using bridge.server.data;
 using bridge;
 // -------------------------------------------
-// File: ../../DotNet/Library/src/bridge/embedded/CLRBridgeEmbedded.cs
+// File: ../DotNet/Library/src/bridge/embedded/CLRBridgeEmbedded.cs
 // -------------------------------------------
 ﻿// 
 // General:
-//      This file is pary of .NET Bridge
+//      This file is part of .NET Bridge
 //
 // Copyright:
 //      2010 Jonathan Shore
@@ -247,11 +247,11 @@ namespace bridge.embedded
 }
 
 // -------------------------------------------
-// File: ../../DotNet/Library/src/bridge/ICLRBridge.cs
+// File: ../DotNet/Library/src/bridge/ICLRBridge.cs
 // -------------------------------------------
 ﻿// 
 // General:
-//      This file is pary of .NET Bridge
+//      This file is part of .NET Bridge
 //
 // Copyright:
 //      2010 Jonathan Shore
@@ -422,11 +422,11 @@ namespace bridge
 }
 
 // -------------------------------------------
-// File: ../../DotNet/Library/src/bridge/server/CLRBridgeClient.cs
+// File: ../DotNet/Library/src/bridge/server/CLRBridgeClient.cs
 // -------------------------------------------
 ﻿// 
 // General:
-//      This file is pary of .NET Bridge
+//      This file is part of .NET Bridge
 //
 // Copyright:
 //      2010 Jonathan Shore
@@ -757,11 +757,11 @@ namespace bridge.server
 }
 
 // -------------------------------------------
-// File: ../../DotNet/Library/src/bridge/server/CLRBridgeServer.cs
+// File: ../DotNet/Library/src/bridge/server/CLRBridgeServer.cs
 // -------------------------------------------
 ﻿// 
 // General:
-//      This file is pary of .NET Bridge
+//      This file is part of .NET Bridge
 //
 // Copyright:
 //      2010 Jonathan Shore
@@ -891,11 +891,11 @@ namespace bridge.server
 }
 
 // -------------------------------------------
-// File: ../../DotNet/Library/src/bridge/server/CLRBridgeServerClient.cs
+// File: ../DotNet/Library/src/bridge/server/CLRBridgeServerClient.cs
 // -------------------------------------------
 ﻿// 
 // General:
-//      This file is pary of .NET Bridge
+//      This file is part of .NET Bridge
 //
 // Copyright:
 //      2010 Jonathan Shore
@@ -1338,11 +1338,11 @@ namespace bridge.server
 }
 
 // -------------------------------------------
-// File: ../../DotNet/Library/src/bridge/server/CLRMessage.cs
+// File: ../DotNet/Library/src/bridge/server/CLRMessage.cs
 // -------------------------------------------
 ﻿// 
 // General:
-//      This file is pary of .NET Bridge
+//      This file is part of .NET Bridge
 //
 // Copyright:
 //      2010 Jonathan Shore
@@ -1820,11 +1820,11 @@ namespace bridge.server
 }
 
 // -------------------------------------------
-// File: ../../DotNet/Library/src/bridge/server/CLRObjectProxy.cs
+// File: ../DotNet/Library/src/bridge/server/CLRObjectProxy.cs
 // -------------------------------------------
 ﻿// 
 // General:
-//      This file is pary of .NET Bridge
+//      This file is part of .NET Bridge
 //
 // Copyright:
 //      2010 Jonathan Shore
@@ -2002,11 +2002,11 @@ namespace bridge.server
 }
 
 // -------------------------------------------
-// File: ../../DotNet/Library/src/bridge/server/ctrl/CLRCallMethodMessage.cs
+// File: ../DotNet/Library/src/bridge/server/ctrl/CLRCallMethodMessage.cs
 // -------------------------------------------
 ﻿// 
 // General:
-//      This file is pary of .NET Bridge
+//      This file is part of .NET Bridge
 //
 // Copyright:
 //      2010 Jonathan Shore
@@ -2103,11 +2103,11 @@ namespace bridge.server.ctrl
 }
 
 // -------------------------------------------
-// File: ../../DotNet/Library/src/bridge/server/ctrl/CLRCallStaticMethodMessage.cs
+// File: ../DotNet/Library/src/bridge/server/ctrl/CLRCallStaticMethodMessage.cs
 // -------------------------------------------
 ﻿// 
 // General:
-//      This file is pary of .NET Bridge
+//      This file is part of .NET Bridge
 //
 // Copyright:
 //      2010 Jonathan Shore
@@ -2205,11 +2205,11 @@ namespace bridge.server.ctrl
 }
 
 // -------------------------------------------
-// File: ../../DotNet/Library/src/bridge/server/ctrl/CLRCreateMessage.cs
+// File: ../DotNet/Library/src/bridge/server/ctrl/CLRCreateMessage.cs
 // -------------------------------------------
 ﻿// 
 // General:
-//      This file is pary of .NET Bridge
+//      This file is part of .NET Bridge
 //
 // Copyright:
 //      2010 Jonathan Shore
@@ -2301,11 +2301,11 @@ namespace bridge.server.ctrl
 }
 
 // -------------------------------------------
-// File: ../../DotNet/Library/src/bridge/server/ctrl/CLRGetIndexedMessage.cs
+// File: ../DotNet/Library/src/bridge/server/ctrl/CLRGetIndexedMessage.cs
 // -------------------------------------------
 ﻿// 
 // General:
-//      This file is pary of .NET Bridge
+//      This file is part of .NET Bridge
 //
 // Copyright:
 //      2010 Jonathan Shore
@@ -2387,11 +2387,11 @@ namespace bridge.server.ctrl
 }
 
 // -------------------------------------------
-// File: ../../DotNet/Library/src/bridge/server/ctrl/CLRGetIndexedPropertyMessage.cs
+// File: ../DotNet/Library/src/bridge/server/ctrl/CLRGetIndexedPropertyMessage.cs
 // -------------------------------------------
 ﻿// 
 // General:
-//      This file is pary of .NET Bridge
+//      This file is part of .NET Bridge
 //
 // Copyright:
 //      2010 Jonathan Shore
@@ -2479,11 +2479,11 @@ namespace bridge.server.ctrl
 }
 
 // -------------------------------------------
-// File: ../../DotNet/Library/src/bridge/server/ctrl/CLRGetPropertyMessage.cs
+// File: ../DotNet/Library/src/bridge/server/ctrl/CLRGetPropertyMessage.cs
 // -------------------------------------------
 ﻿// 
 // General:
-//      This file is pary of .NET Bridge
+//      This file is part of .NET Bridge
 //
 // Copyright:
 //      2010 Jonathan Shore
@@ -2565,11 +2565,11 @@ namespace bridge.server.ctrl
 }
 
 // -------------------------------------------
-// File: ../../DotNet/Library/src/bridge/server/ctrl/CLRGetStaticPropertyMessage.cs
+// File: ../DotNet/Library/src/bridge/server/ctrl/CLRGetStaticPropertyMessage.cs
 // -------------------------------------------
 ﻿// 
 // General:
-//      This file is pary of .NET Bridge
+//      This file is part of .NET Bridge
 //
 // Copyright:
 //      2010 Jonathan Shore
@@ -2651,11 +2651,11 @@ namespace bridge.server.ctrl
 }
 
 // -------------------------------------------
-// File: ../../DotNet/Library/src/bridge/server/ctrl/CLRProtectMessage.cs
+// File: ../DotNet/Library/src/bridge/server/ctrl/CLRProtectMessage.cs
 // -------------------------------------------
 ﻿// 
 // General:
-//      This file is pary of .NET Bridge
+//      This file is part of .NET Bridge
 //
 // Copyright:
 //      2010 Jonathan Shore
@@ -2730,11 +2730,11 @@ namespace bridge.server.ctrl
 }
 
 // -------------------------------------------
-// File: ../../DotNet/Library/src/bridge/server/ctrl/CLRReleaseMessage.cs
+// File: ../DotNet/Library/src/bridge/server/ctrl/CLRReleaseMessage.cs
 // -------------------------------------------
 ﻿// 
 // General:
-//      This file is pary of .NET Bridge
+//      This file is part of .NET Bridge
 //
 // Copyright:
 //      2010 Jonathan Shore
@@ -2809,11 +2809,11 @@ namespace bridge.server.ctrl
 }
 
 // -------------------------------------------
-// File: ../../DotNet/Library/src/bridge/server/ctrl/CLRSetPropertyMessage.cs
+// File: ../DotNet/Library/src/bridge/server/ctrl/CLRSetPropertyMessage.cs
 // -------------------------------------------
 ﻿// 
 // General:
-//      This file is pary of .NET Bridge
+//      This file is part of .NET Bridge
 //
 // Copyright:
 //      2010 Jonathan Shore
@@ -2901,11 +2901,11 @@ namespace bridge.server.ctrl
 }
 
 // -------------------------------------------
-// File: ../../DotNet/Library/src/bridge/server/ctrl/CLRSetStaticPropertyMessage.cs
+// File: ../DotNet/Library/src/bridge/server/ctrl/CLRSetStaticPropertyMessage.cs
 // -------------------------------------------
 ﻿// 
 // General:
-//      This file is pary of .NET Bridge
+//      This file is part of .NET Bridge
 //
 // Copyright:
 //      2010 Jonathan Shore
@@ -2993,11 +2993,11 @@ namespace bridge.server.ctrl
 }
 
 // -------------------------------------------
-// File: ../../DotNet/Library/src/bridge/server/ctrl/CLRTemplateReplyMessage.cs
+// File: ../DotNet/Library/src/bridge/server/ctrl/CLRTemplateReplyMessage.cs
 // -------------------------------------------
 ﻿// 
 // General:
-//      This file is pary of .NET Bridge
+//      This file is part of .NET Bridge
 //
 // Copyright:
 //      2010 Jonathan Shore
@@ -3120,11 +3120,11 @@ namespace bridge.server.ctrl
 }
 
 // -------------------------------------------
-// File: ../../DotNet/Library/src/bridge/server/ctrl/CLRTemplateReqMessage.cs
+// File: ../DotNet/Library/src/bridge/server/ctrl/CLRTemplateReqMessage.cs
 // -------------------------------------------
 ﻿// 
 // General:
-//      This file is pary of .NET Bridge
+//      This file is part of .NET Bridge
 //
 // Copyright:
 //      2010 Jonathan Shore
@@ -3197,11 +3197,11 @@ namespace bridge.server.ctrl
 }
 
 // -------------------------------------------
-// File: ../../DotNet/Library/src/bridge/server/data/CLRBoolArrayMessage.cs
+// File: ../DotNet/Library/src/bridge/server/data/CLRBoolArrayMessage.cs
 // -------------------------------------------
 ﻿// 
 // General:
-//      This file is pary of .NET Bridge
+//      This file is part of .NET Bridge
 //
 // Copyright:
 //      2010 Jonathan Shore
@@ -3284,11 +3284,11 @@ namespace bridge.server.data
 }
 
 // -------------------------------------------
-// File: ../../DotNet/Library/src/bridge/server/data/CLRBoolMessage.cs
+// File: ../DotNet/Library/src/bridge/server/data/CLRBoolMessage.cs
 // -------------------------------------------
 ﻿// 
 // General:
-//      This file is pary of .NET Bridge
+//      This file is part of .NET Bridge
 //
 // Copyright:
 //      2010 Jonathan Shore
@@ -3360,11 +3360,11 @@ namespace bridge.server.data
 }
 
 // -------------------------------------------
-// File: ../../DotNet/Library/src/bridge/server/data/CLRByteArrayMessage.cs
+// File: ../DotNet/Library/src/bridge/server/data/CLRByteArrayMessage.cs
 // -------------------------------------------
 ﻿// 
 // General:
-//      This file is pary of .NET Bridge
+//      This file is part of .NET Bridge
 //
 // Copyright:
 //      2010 Jonathan Shore
@@ -3447,11 +3447,11 @@ namespace bridge.server.data
 }
 
 // -------------------------------------------
-// File: ../../DotNet/Library/src/bridge/server/data/CLRByteMessage.cs
+// File: ../DotNet/Library/src/bridge/server/data/CLRByteMessage.cs
 // -------------------------------------------
 ﻿// 
 // General:
-//      This file is pary of .NET Bridge
+//      This file is part of .NET Bridge
 //
 // Copyright:
 //      2010 Jonathan Shore
@@ -3523,11 +3523,11 @@ namespace bridge.server.data
 }
 
 // -------------------------------------------
-// File: ../../DotNet/Library/src/bridge/server/data/CLRExceptionMessage.cs
+// File: ../DotNet/Library/src/bridge/server/data/CLRExceptionMessage.cs
 // -------------------------------------------
 ﻿// 
 // General:
-//      This file is pary of .NET Bridge
+//      This file is part of .NET Bridge
 //
 // Copyright:
 //      2010 Jonathan Shore
@@ -3609,11 +3609,11 @@ namespace bridge.server.data
 }
 
 // -------------------------------------------
-// File: ../../DotNet/Library/src/bridge/server/data/CLRInt32ArrayMessage.cs
+// File: ../DotNet/Library/src/bridge/server/data/CLRInt32ArrayMessage.cs
 // -------------------------------------------
 ﻿// 
 // General:
-//      This file is pary of .NET Bridge
+//      This file is part of .NET Bridge
 //
 // Copyright:
 //      2010 Jonathan Shore
@@ -3696,11 +3696,11 @@ namespace bridge.server.data
 }
 
 // -------------------------------------------
-// File: ../../DotNet/Library/src/bridge/server/data/CLRInt32Message.cs
+// File: ../DotNet/Library/src/bridge/server/data/CLRInt32Message.cs
 // -------------------------------------------
 ﻿// 
 // General:
-//      This file is pary of .NET Bridge
+//      This file is part of .NET Bridge
 //
 // Copyright:
 //      2010 Jonathan Shore
@@ -3772,11 +3772,11 @@ namespace bridge.server.data
 }
 
 // -------------------------------------------
-// File: ../../DotNet/Library/src/bridge/server/data/CLRInt64ArrayMessage.cs
+// File: ../DotNet/Library/src/bridge/server/data/CLRInt64ArrayMessage.cs
 // -------------------------------------------
 ﻿// 
 // General:
-//      This file is pary of .NET Bridge
+//      This file is part of .NET Bridge
 //
 // Copyright:
 //      2010 Jonathan Shore
@@ -3859,11 +3859,11 @@ namespace bridge.server.data
 }
 
 // -------------------------------------------
-// File: ../../DotNet/Library/src/bridge/server/data/CLRInt64Message.cs
+// File: ../DotNet/Library/src/bridge/server/data/CLRInt64Message.cs
 // -------------------------------------------
 ﻿// 
 // General:
-//      This file is pary of .NET Bridge
+//      This file is part of .NET Bridge
 //
 // Copyright:
 //      2010 Jonathan Shore
@@ -3935,11 +3935,11 @@ namespace bridge.server.data
 }
 
 // -------------------------------------------
-// File: ../../DotNet/Library/src/bridge/server/data/CLRMatrixMessage.cs
+// File: ../DotNet/Library/src/bridge/server/data/CLRMatrixMessage.cs
 // -------------------------------------------
 ﻿// 
 // General:
-//      This file is pary of .NET Bridge
+//      This file is part of .NET Bridge
 //
 // Copyright:
 //      2010 Jonathan Shore
@@ -4072,11 +4072,11 @@ namespace bridge.server.data
 }
 
 // -------------------------------------------
-// File: ../../DotNet/Library/src/bridge/server/data/CLRNullMessage.cs
+// File: ../DotNet/Library/src/bridge/server/data/CLRNullMessage.cs
 // -------------------------------------------
 ﻿// 
 // General:
-//      This file is pary of .NET Bridge
+//      This file is part of .NET Bridge
 //
 // Copyright:
 //      2010 Jonathan Shore
@@ -4134,11 +4134,11 @@ namespace bridge.server.data
 }
 
 // -------------------------------------------
-// File: ../../DotNet/Library/src/bridge/server/data/CLRObjectArrayMessage.cs
+// File: ../DotNet/Library/src/bridge/server/data/CLRObjectArrayMessage.cs
 // -------------------------------------------
 ﻿// 
 // General:
-//      This file is pary of .NET Bridge
+//      This file is part of .NET Bridge
 //
 // Copyright:
 //      2010 Jonathan Shore
@@ -4228,11 +4228,11 @@ namespace bridge.server.data
 }
 
 // -------------------------------------------
-// File: ../../DotNet/Library/src/bridge/server/data/CLRObjectMessage.cs
+// File: ../DotNet/Library/src/bridge/server/data/CLRObjectMessage.cs
 // -------------------------------------------
 ﻿// 
 // General:
-//      This file is pary of .NET Bridge
+//      This file is part of .NET Bridge
 //
 // Copyright:
 //      2010 Jonathan Shore
@@ -4334,11 +4334,11 @@ namespace bridge.server.data
 }
 
 // -------------------------------------------
-// File: ../../DotNet/Library/src/bridge/server/data/CLRReal64ArrayMessage.cs
+// File: ../DotNet/Library/src/bridge/server/data/CLRReal64ArrayMessage.cs
 // -------------------------------------------
 ﻿// 
 // General:
-//      This file is pary of .NET Bridge
+//      This file is part of .NET Bridge
 //
 // Copyright:
 //      2010 Jonathan Shore
@@ -4421,11 +4421,11 @@ namespace bridge.server.data
 }
 
 // -------------------------------------------
-// File: ../../DotNet/Library/src/bridge/server/data/CLRReal64Message.cs
+// File: ../DotNet/Library/src/bridge/server/data/CLRReal64Message.cs
 // -------------------------------------------
 ﻿// 
 // General:
-//      This file is pary of .NET Bridge
+//      This file is part of .NET Bridge
 //
 // Copyright:
 //      2010 Jonathan Shore
@@ -4497,11 +4497,11 @@ namespace bridge.server.data
 }
 
 // -------------------------------------------
-// File: ../../DotNet/Library/src/bridge/server/data/CLRStringArrayMessage.cs
+// File: ../DotNet/Library/src/bridge/server/data/CLRStringArrayMessage.cs
 // -------------------------------------------
 ﻿// 
 // General:
-//      This file is pary of .NET Bridge
+//      This file is part of .NET Bridge
 //
 // Copyright:
 //      2010 Jonathan Shore
@@ -4584,11 +4584,11 @@ namespace bridge.server.data
 }
 
 // -------------------------------------------
-// File: ../../DotNet/Library/src/bridge/server/data/CLRStringMessage.cs
+// File: ../DotNet/Library/src/bridge/server/data/CLRStringMessage.cs
 // -------------------------------------------
 ﻿// 
 // General:
-//      This file is pary of .NET Bridge
+//      This file is part of .NET Bridge
 //
 // Copyright:
 //      2010 Jonathan Shore
@@ -4660,11 +4660,11 @@ namespace bridge.server.data
 }
 
 // -------------------------------------------
-// File: ../../DotNet/Library/src/bridge/server/data/CLRVectorMessage.cs
+// File: ../DotNet/Library/src/bridge/server/data/CLRVectorMessage.cs
 // -------------------------------------------
 ﻿// 
 // General:
-//      This file is pary of .NET Bridge
+//      This file is part of .NET Bridge
 //
 // Copyright:
 //      2010 Jonathan Shore
@@ -4763,11 +4763,11 @@ namespace bridge.server.data
 }
 
 // -------------------------------------------
-// File: ../../DotNet/Library/src/common/collections/BlockingQueue.cs
+// File: ../DotNet/Library/src/common/collections/BlockingQueue.cs
 // -------------------------------------------
 ﻿// 
 // General:
-//      This file is pary of .NET Bridge
+//      This file is part of .NET Bridge
 //
 // Copyright:
 //      2010 Jonathan Shore
@@ -4895,7 +4895,7 @@ namespace src.common.collections
 }
 
 // -------------------------------------------
-// File: ../../DotNet/Library/src/common/collections/Collections.cs
+// File: ../DotNet/Library/src/common/collections/Collections.cs
 // -------------------------------------------
 ﻿ 
 
@@ -5233,11 +5233,11 @@ namespace bridge.common.collections
 }
 
 // -------------------------------------------
-// File: ../../DotNet/Library/src/common/collections/Comparators.cs
+// File: ../DotNet/Library/src/common/collections/Comparators.cs
 // -------------------------------------------
 ﻿// 
 // General:
-//      This file is pary of .NET Bridge
+//      This file is part of .NET Bridge
 //
 // Copyright:
 //      2010 Jonathan Shore
@@ -5404,11 +5404,11 @@ namespace bridge.common.collections
 }
 
 // -------------------------------------------
-// File: ../../DotNet/Library/src/common/collections/LinkedNode.cs
+// File: ../DotNet/Library/src/common/collections/LinkedNode.cs
 // -------------------------------------------
 ﻿// 
 // General:
-//      This file is pary of .NET Bridge
+//      This file is part of .NET Bridge
 //
 // Copyright:
 //      2010 Jonathan Shore
@@ -5445,11 +5445,11 @@ namespace bridge.common.collections
 }
 
 // -------------------------------------------
-// File: ../../DotNet/Library/src/common/collections/LinkedQueue.cs
+// File: ../DotNet/Library/src/common/collections/LinkedQueue.cs
 // -------------------------------------------
 ﻿// 
 // General:
-//      This file is pary of .NET Bridge
+//      This file is part of .NET Bridge
 //
 // Copyright:
 //      2010 Jonathan Shore
@@ -5789,11 +5789,11 @@ namespace bridge.common.collections
 }
 
 // -------------------------------------------
-// File: ../../DotNet/Library/src/common/collections/LRUCache.cs
+// File: ../DotNet/Library/src/common/collections/LRUCache.cs
 // -------------------------------------------
 ﻿// 
 // General:
-//      This file is pary of .NET Bridge
+//      This file is part of .NET Bridge
 //
 // Copyright:
 //      2010 Jonathan Shore
@@ -6039,11 +6039,11 @@ namespace bridge.common.collections
 }
 
 // -------------------------------------------
-// File: ../../DotNet/Library/src/common/collections/PriorityQueue.cs
+// File: ../DotNet/Library/src/common/collections/PriorityQueue.cs
 // -------------------------------------------
 ﻿// 
 // General:
-//      This file is pary of .NET Bridge
+//      This file is part of .NET Bridge
 //
 // Copyright:
 //      2010 Jonathan Shore
@@ -6397,11 +6397,11 @@ namespace bridge.common.collections
 }
 
 // -------------------------------------------
-// File: ../../DotNet/Library/src/common/collections/SortedList.cs
+// File: ../DotNet/Library/src/common/collections/SortedList.cs
 // -------------------------------------------
 ﻿// 
 // General:
-//      This file is pary of .NET Bridge
+//      This file is part of .NET Bridge
 //
 // Copyright:
 //      2010 Jonathan Shore
@@ -6704,7 +6704,7 @@ namespace bridge.common.collections
 }
 
 // -------------------------------------------
-// File: ../../DotNet/Library/src/common/collections/SortStableWithOrdering.cs
+// File: ../DotNet/Library/src/common/collections/SortStableWithOrdering.cs
 // -------------------------------------------
 //  
 //  	Authors
@@ -6942,11 +6942,11 @@ namespace com.stg.common.collections
 }
 
 // -------------------------------------------
-// File: ../../DotNet/Library/src/common/io/BitConversions.cs
+// File: ../DotNet/Library/src/common/io/BitConversions.cs
 // -------------------------------------------
 ﻿// 
 // General:
-//      This file is pary of .NET Bridge
+//      This file is part of .NET Bridge
 //
 // Copyright:
 //      2010 Jonathan Shore
@@ -7414,11 +7414,11 @@ namespace bridge.common.io
 }
 
 // -------------------------------------------
-// File: ../../DotNet/Library/src/common/io/Blob.cs
+// File: ../DotNet/Library/src/common/io/Blob.cs
 // -------------------------------------------
 ﻿// 
 // General:
-//      This file is pary of .NET Bridge
+//      This file is part of .NET Bridge
 //
 // Copyright:
 //      2010 Jonathan Shore
@@ -7876,11 +7876,11 @@ namespace bridge.common.io
 }
 
 // -------------------------------------------
-// File: ../../DotNet/Library/src/common/io/BufferedDuplexStream.cs
+// File: ../DotNet/Library/src/common/io/BufferedDuplexStream.cs
 // -------------------------------------------
 ﻿// 
 // General:
-//      This file is pary of .NET Bridge
+//      This file is part of .NET Bridge
 //
 // Copyright:
 //      2010 Jonathan Shore
@@ -8128,11 +8128,11 @@ namespace bridge.common.io
 }
 
 // -------------------------------------------
-// File: ../../DotNet/Library/src/common/io/BufferedRandomAccessFile.cs
+// File: ../DotNet/Library/src/common/io/BufferedRandomAccessFile.cs
 // -------------------------------------------
 ﻿// 
 // General:
-//      This file is pary of .NET Bridge
+//      This file is part of .NET Bridge
 //
 // Copyright:
 //      2010 Jonathan Shore
@@ -8658,11 +8658,11 @@ namespace bridge.common.io
 }
 
 // -------------------------------------------
-// File: ../../DotNet/Library/src/common/io/BufferedReadStream.cs
+// File: ../DotNet/Library/src/common/io/BufferedReadStream.cs
 // -------------------------------------------
 ﻿// 
 // General:
-//      This file is pary of .NET Bridge
+//      This file is part of .NET Bridge
 //
 // Copyright:
 //      2010 Jonathan Shore
@@ -8869,11 +8869,11 @@ namespace bridge.common.io
 }
 
 // -------------------------------------------
-// File: ../../DotNet/Library/src/common/io/BufferedWriteStream.cs
+// File: ../DotNet/Library/src/common/io/BufferedWriteStream.cs
 // -------------------------------------------
 ﻿// 
 // General:
-//      This file is pary of .NET Bridge
+//      This file is part of .NET Bridge
 //
 // Copyright:
 //      2010 Jonathan Shore
@@ -9068,11 +9068,11 @@ namespace bridge.common.io
 }
 
 // -------------------------------------------
-// File: ../../DotNet/Library/src/common/io/ConcatedStream.cs
+// File: ../DotNet/Library/src/common/io/ConcatedStream.cs
 // -------------------------------------------
 ﻿// 
 // General:
-//      This file is pary of .NET Bridge
+//      This file is part of .NET Bridge
 //
 // Copyright:
 //      2010 Jonathan Shore
@@ -9276,11 +9276,11 @@ namespace bridge.common.io
 }
 
 // -------------------------------------------
-// File: ../../DotNet/Library/src/common/io/EndianConversions.cs
+// File: ../DotNet/Library/src/common/io/EndianConversions.cs
 // -------------------------------------------
 ﻿// 
 // General:
-//      This file is pary of .NET Bridge
+//      This file is part of .NET Bridge
 //
 // Copyright:
 //      2010 Jonathan Shore
@@ -9775,11 +9775,11 @@ namespace bridge.common.io
 
 }
 // -------------------------------------------
-// File: ../../DotNet/Library/src/common/io/EndianReaders.cs
+// File: ../DotNet/Library/src/common/io/EndianReaders.cs
 // -------------------------------------------
 ﻿// 
 // General:
-//      This file is pary of .NET Bridge
+//      This file is part of .NET Bridge
 //
 // Copyright:
 //      2010 Jonathan Shore
@@ -10830,11 +10830,11 @@ namespace bridge.common.io
 }
 
 // -------------------------------------------
-// File: ../../DotNet/Library/src/common/io/EndianStreams.cs
+// File: ../DotNet/Library/src/common/io/EndianStreams.cs
 // -------------------------------------------
 ﻿// 
 // General:
-//      This file is pary of .NET Bridge
+//      This file is part of .NET Bridge
 //
 // Copyright:
 //      2010 Jonathan Shore
@@ -10951,11 +10951,11 @@ namespace bridge.common.io
 }
 
 // -------------------------------------------
-// File: ../../DotNet/Library/src/common/io/EndianWriters.cs
+// File: ../DotNet/Library/src/common/io/EndianWriters.cs
 // -------------------------------------------
 ﻿// 
 // General:
-//      This file is pary of .NET Bridge
+//      This file is part of .NET Bridge
 //
 // Copyright:
 //      2010 Jonathan Shore
@@ -11869,11 +11869,11 @@ namespace bridge.common.io
 }
 
 // -------------------------------------------
-// File: ../../DotNet/Library/src/common/io/IBinaryConversions.cs
+// File: ../DotNet/Library/src/common/io/IBinaryConversions.cs
 // -------------------------------------------
 ﻿// 
 // General:
-//      This file is pary of .NET Bridge
+//      This file is part of .NET Bridge
 //
 // Copyright:
 //      2010 Jonathan Shore
@@ -11997,11 +11997,11 @@ namespace bridge.common.io
 }
 
 // -------------------------------------------
-// File: ../../DotNet/Library/src/common/io/IBinaryReader.cs
+// File: ../DotNet/Library/src/common/io/IBinaryReader.cs
 // -------------------------------------------
 ﻿// 
 // General:
-//      This file is pary of .NET Bridge
+//      This file is part of .NET Bridge
 //
 // Copyright:
 //      2010 Jonathan Shore
@@ -12136,11 +12136,11 @@ namespace bridge.common.io
 }
 
 // -------------------------------------------
-// File: ../../DotNet/Library/src/common/io/IBinaryWriter.cs
+// File: ../DotNet/Library/src/common/io/IBinaryWriter.cs
 // -------------------------------------------
 ﻿// 
 // General:
-//      This file is pary of .NET Bridge
+//      This file is part of .NET Bridge
 //
 // Copyright:
 //      2010 Jonathan Shore
@@ -12281,11 +12281,11 @@ namespace bridge.common.io
 }
 
 // -------------------------------------------
-// File: ../../DotNet/Library/src/common/io/IOUtils.cs
+// File: ../DotNet/Library/src/common/io/IOUtils.cs
 // -------------------------------------------
 ﻿// 
 // General:
-//      This file is pary of .NET Bridge
+//      This file is part of .NET Bridge
 //
 // Copyright:
 //      2010 Jonathan Shore
@@ -12646,11 +12646,11 @@ namespace bridge.common.io
 }
 
 // -------------------------------------------
-// File: ../../DotNet/Library/src/common/io/NetUtils.cs
+// File: ../DotNet/Library/src/common/io/NetUtils.cs
 // -------------------------------------------
 ﻿// 
 // General:
-//      This file is pary of .NET Bridge
+//      This file is part of .NET Bridge
 //
 // Copyright:
 //      2010 Jonathan Shore
@@ -12755,11 +12755,11 @@ namespace bridge.common.io
 }
 
 // -------------------------------------------
-// File: ../../DotNet/Library/src/common/matrix/ColumnViewVector.cs
+// File: ../DotNet/Library/src/common/matrix/ColumnViewVector.cs
 // -------------------------------------------
 ﻿// 
 // General:
-//      This file is pary of .NET Bridge
+//      This file is part of .NET Bridge
 //
 // Copyright:
 //      2010 Jonathan Shore
@@ -12881,11 +12881,11 @@ namespace bridge.math.matrix
 }
 
 // -------------------------------------------
-// File: ../../DotNet/Library/src/common/matrix/EvaluatedVector.cs
+// File: ../DotNet/Library/src/common/matrix/EvaluatedVector.cs
 // -------------------------------------------
 ﻿// 
 // General:
-//      This file is pary of .NET Bridge
+//      This file is part of .NET Bridge
 //
 // Copyright:
 //      2010 Jonathan Shore
@@ -12986,11 +12986,11 @@ namespace bridge.math.matrix
 }
 
 // -------------------------------------------
-// File: ../../DotNet/Library/src/common/matrix/IIndexByName.cs
+// File: ../DotNet/Library/src/common/matrix/IIndexByName.cs
 // -------------------------------------------
 ﻿// 
 // General:
-//      This file is pary of .NET Bridge
+//      This file is part of .NET Bridge
 //
 // Copyright:
 //      2010 Jonathan Shore
@@ -13043,11 +13043,11 @@ namespace bridge.math.matrix
 }
 
 // -------------------------------------------
-// File: ../../DotNet/Library/src/common/matrix/IndexByName.cs
+// File: ../DotNet/Library/src/common/matrix/IndexByName.cs
 // -------------------------------------------
 ﻿// 
 // General:
-//      This file is pary of .NET Bridge
+//      This file is part of .NET Bridge
 //
 // Copyright:
 //      2010 Jonathan Shore
@@ -13240,11 +13240,11 @@ namespace bridge.math.matrix
 }
 
 // -------------------------------------------
-// File: ../../DotNet/Library/src/common/matrix/IndexedMatrix.cs
+// File: ../DotNet/Library/src/common/matrix/IndexedMatrix.cs
 // -------------------------------------------
 ﻿// 
 // General:
-//      This file is pary of .NET Bridge
+//      This file is part of .NET Bridge
 //
 // Copyright:
 //      2010 Jonathan Shore
@@ -13513,11 +13513,11 @@ namespace bridge.math.matrix
 }
 
 // -------------------------------------------
-// File: ../../DotNet/Library/src/common/matrix/IndexedVector.cs
+// File: ../DotNet/Library/src/common/matrix/IndexedVector.cs
 // -------------------------------------------
 ﻿// 
 // General:
-//      This file is pary of .NET Bridge
+//      This file is part of .NET Bridge
 //
 // Copyright:
 //      2010 Jonathan Shore
@@ -13646,11 +13646,11 @@ namespace bridge.math.matrix
 
 
 // -------------------------------------------
-// File: ../../DotNet/Library/src/common/matrix/MatrixOps.cs
+// File: ../DotNet/Library/src/common/matrix/MatrixOps.cs
 // -------------------------------------------
 ﻿// 
 // General:
-//      This file is pary of .NET Bridge
+//      This file is part of .NET Bridge
 //
 // Copyright:
 //      2010 Jonathan Shore
@@ -14178,11 +14178,11 @@ namespace bridge.math.matrix
 }
 
 // -------------------------------------------
-// File: ../../DotNet/Library/src/common/matrix/MatrixUtils.cs
+// File: ../DotNet/Library/src/common/matrix/MatrixUtils.cs
 // -------------------------------------------
 ﻿// 
 // General:
-//      This file is pary of .NET Bridge
+//      This file is part of .NET Bridge
 //
 // Copyright:
 //      2010 Jonathan Shore
@@ -14506,11 +14506,11 @@ namespace bridge.math.matrix
 }
 
 // -------------------------------------------
-// File: ../../DotNet/Library/src/common/matrix/SubviewMatrix.cs
+// File: ../DotNet/Library/src/common/matrix/SubviewMatrix.cs
 // -------------------------------------------
 ﻿// 
 // General:
-//      This file is pary of .NET Bridge
+//      This file is part of .NET Bridge
 //
 // Copyright:
 //      2010 Jonathan Shore
@@ -14649,11 +14649,11 @@ namespace bridge.math.matrix
 }
 
 // -------------------------------------------
-// File: ../../DotNet/Library/src/common/matrix/SubviewVector.cs
+// File: ../DotNet/Library/src/common/matrix/SubviewVector.cs
 // -------------------------------------------
 ﻿// 
 // General:
-//      This file is pary of .NET Bridge
+//      This file is part of .NET Bridge
 //
 // Copyright:
 //      2010 Jonathan Shore
@@ -14794,11 +14794,11 @@ namespace bridge.math.matrix
 }
 
 // -------------------------------------------
-// File: ../../DotNet/Library/src/common/parsing/ctor/CtorLexer.cs
+// File: ../DotNet/Library/src/common/parsing/ctor/CtorLexer.cs
 // -------------------------------------------
 ﻿// 
 // General:
-//      This file is pary of .NET Bridge
+//      This file is part of .NET Bridge
 //
 // Copyright:
 //      2010 Jonathan Shore
@@ -14997,11 +14997,11 @@ namespace bridge.common.parsing.ctor
 }
 
 // -------------------------------------------
-// File: ../../DotNet/Library/src/common/parsing/ctor/CtorParser.cs
+// File: ../DotNet/Library/src/common/parsing/ctor/CtorParser.cs
 // -------------------------------------------
 ﻿// 
 // General:
-//      This file is pary of .NET Bridge
+//      This file is part of .NET Bridge
 //
 // Copyright:
 //      2010 Jonathan Shore
@@ -15192,11 +15192,11 @@ namespace bridge.common.parsing.ctor
 }
 
 // -------------------------------------------
-// File: ../../DotNet/Library/src/common/parsing/ctor/CtorToken.cs
+// File: ../DotNet/Library/src/common/parsing/ctor/CtorToken.cs
 // -------------------------------------------
 ﻿// 
 // General:
-//      This file is pary of .NET Bridge
+//      This file is part of .NET Bridge
 //
 // Copyright:
 //      2010 Jonathan Shore
@@ -15235,11 +15235,11 @@ namespace bridge.common.parsing.ctor
 }
 
 // -------------------------------------------
-// File: ../../DotNet/Library/src/common/parsing/dates/DateLexer.cs
+// File: ../DotNet/Library/src/common/parsing/dates/DateLexer.cs
 // -------------------------------------------
 ﻿// 
 // General:
-//      This file is pary of .NET Bridge
+//      This file is part of .NET Bridge
 //
 // Copyright:
 //      2010 Jonathan Shore
@@ -15454,11 +15454,11 @@ namespace bridge.common.parsing.dates
 }
 
 // -------------------------------------------
-// File: ../../DotNet/Library/src/common/parsing/dates/DateParser.cs
+// File: ../DotNet/Library/src/common/parsing/dates/DateParser.cs
 // -------------------------------------------
 ﻿// 
 // General:
-//      This file is pary of .NET Bridge
+//      This file is part of .NET Bridge
 //
 // Copyright:
 //      2010 Jonathan Shore
@@ -16080,11 +16080,11 @@ namespace bridge.common.parsing.dates
 }
 
 // -------------------------------------------
-// File: ../../DotNet/Library/src/common/parsing/dates/DateToken.cs
+// File: ../DotNet/Library/src/common/parsing/dates/DateToken.cs
 // -------------------------------------------
 ﻿// 
 // General:
-//      This file is pary of .NET Bridge
+//      This file is part of .NET Bridge
 //
 // Copyright:
 //      2010 Jonathan Shore
@@ -16208,11 +16208,11 @@ namespace bridge.common.parsing.dates
 }
 
 // -------------------------------------------
-// File: ../../DotNet/Library/src/common/parsing/json/JsonLexer.cs
+// File: ../DotNet/Library/src/common/parsing/json/JsonLexer.cs
 // -------------------------------------------
 ﻿// 
 // General:
-//      This file is pary of .NET Bridge
+//      This file is part of .NET Bridge
 //
 // Copyright:
 //      2010 Jonathan Shore
@@ -16574,11 +16574,11 @@ namespace bridge.common.parsing.json
 }
 
 // -------------------------------------------
-// File: ../../DotNet/Library/src/common/parsing/json/JsonToken.cs
+// File: ../DotNet/Library/src/common/parsing/json/JsonToken.cs
 // -------------------------------------------
 ﻿// 
 // General:
-//      This file is pary of .NET Bridge
+//      This file is part of .NET Bridge
 //
 // Copyright:
 //      2010 Jonathan Shore
@@ -16730,11 +16730,11 @@ namespace bridge.common.parsing.json
 }
 
 // -------------------------------------------
-// File: ../../DotNet/Library/src/common/parsing/Token.cs
+// File: ../DotNet/Library/src/common/parsing/Token.cs
 // -------------------------------------------
 ﻿// 
 // General:
-//      This file is pary of .NET Bridge
+//      This file is part of .NET Bridge
 //
 // Copyright:
 //      2010 Jonathan Shore
@@ -16853,11 +16853,11 @@ namespace bridge.common.parsing
 }
 
 // -------------------------------------------
-// File: ../../DotNet/Library/src/common/reflection/Creator.cs
+// File: ../DotNet/Library/src/common/reflection/Creator.cs
 // -------------------------------------------
 ﻿// 
 // General:
-//      This file is pary of .NET Bridge
+//      This file is part of .NET Bridge
 //
 // Copyright:
 //      2010 Jonathan Shore
@@ -17055,11 +17055,11 @@ namespace bridge.common.reflection
 }
 
 // -------------------------------------------
-// File: ../../DotNet/Library/src/common/reflection/DelegateGenerator.cs
+// File: ../DotNet/Library/src/common/reflection/DelegateGenerator.cs
 // -------------------------------------------
 ﻿// 
 // General:
-//      This file is pary of .NET Bridge
+//      This file is part of .NET Bridge
 //
 // Copyright:
 //      2010 Jonathan Shore
@@ -17182,11 +17182,11 @@ namespace bridge.common.reflection
 }
 
 // -------------------------------------------
-// File: ../../DotNet/Library/src/common/reflection/ReflectUtils.cs
+// File: ../DotNet/Library/src/common/reflection/ReflectUtils.cs
 // -------------------------------------------
 ﻿// 
 // General:
-//      This file is pary of .NET Bridge
+//      This file is part of .NET Bridge
 //
 // Copyright:
 //      2010 Jonathan Shore
@@ -17876,6 +17876,16 @@ namespace bridge.common.reflection
                     args[i] = narray;
                 }
 
+		else if (pclass == typeof(double []))
+		{
+		    if (typeof (Vector<double>).IsAssignableFrom (aclass)) {
+			var vec = (Vector<double>)args [i];
+			var data = MatrixUtils.DataOf (vec);
+			args [i] = data;
+		    } else if (aclass != typeof (double []))
+			throw new ArgumentException ("unknown argument pairing: " + aclass + " -> double[]");
+		}
+
                 else if (typeof(Vector<double>).IsAssignableFrom(pclass))
                 {
                     if (aclass == typeof(double))
@@ -18040,7 +18050,9 @@ namespace bridge.common.reflection
                 var eklass = parm.ParameterType;
                 var aklass = args[i] != null ? args[i].GetType() : null;
 
-                if (eklass == aklass || eklass.IsAssignableFrom(aklass) || DelegateGenerator.IsAssignableFrom(eklass, aklass))
+		if (aklass == typeof (IndexedVector) && eklass.IsAssignableFrom (typeof (double [])))
+		    score += 200;
+                else if (eklass == aklass || eklass.IsAssignableFrom(aklass) || DelegateGenerator.IsAssignableFrom(eklass, aklass))
                     score += 200;
                 else
                     score += ArgumentPenalty(eklass, aklass);
@@ -18234,11 +18246,11 @@ namespace bridge.common.reflection
 }
 
 // -------------------------------------------
-// File: ../../DotNet/Library/src/common/reflection/ValueTypeUtils.cs
+// File: ../DotNet/Library/src/common/reflection/ValueTypeUtils.cs
 // -------------------------------------------
 ﻿// 
 // General:
-//      This file is pary of .NET Bridge
+//      This file is part of .NET Bridge
 //
 // Copyright:
 //      2010 Jonathan Shore
@@ -18676,11 +18688,11 @@ namespace bridge.common.reflection
 }
 
 // -------------------------------------------
-// File: ../../DotNet/Library/src/common/serialization/IPersist.cs
+// File: ../DotNet/Library/src/common/serialization/IPersist.cs
 // -------------------------------------------
 ﻿// 
 // General:
-//      This file is pary of .NET Bridge
+//      This file is part of .NET Bridge
 //
 // Copyright:
 //      2010 Jonathan Shore
@@ -18730,11 +18742,11 @@ namespace bridge.common.serialization
 }
 
 // -------------------------------------------
-// File: ../../DotNet/Library/src/common/system/ExclusiveLock.cs
+// File: ../DotNet/Library/src/common/system/ExclusiveLock.cs
 // -------------------------------------------
 ﻿// 
 // General:
-//      This file is pary of .NET Bridge
+//      This file is part of .NET Bridge
 //
 // Copyright:
 //      2010 Jonathan Shore
@@ -18796,11 +18808,11 @@ namespace bridge.common.system
 }
 
 // -------------------------------------------
-// File: ../../DotNet/Library/src/common/system/ILock.cs
+// File: ../DotNet/Library/src/common/system/ILock.cs
 // -------------------------------------------
 ﻿// 
 // General:
-//      This file is pary of .NET Bridge
+//      This file is part of .NET Bridge
 //
 // Copyright:
 //      2010 Jonathan Shore
@@ -18852,11 +18864,11 @@ namespace bridge.common.system
 }
 
 // -------------------------------------------
-// File: ../../DotNet/Library/src/common/system/ObjectPool.cs
+// File: ../DotNet/Library/src/common/system/ObjectPool.cs
 // -------------------------------------------
 ﻿// 
 // General:
-//      This file is pary of .NET Bridge
+//      This file is part of .NET Bridge
 //
 // Copyright:
 //      2010 Jonathan Shore
@@ -19066,11 +19078,11 @@ namespace bridge.common.system
 }
 
 // -------------------------------------------
-// File: ../../DotNet/Library/src/common/system/ReadWriteLock.cs
+// File: ../DotNet/Library/src/common/system/ReadWriteLock.cs
 // -------------------------------------------
 ﻿// 
 // General:
-//      This file is pary of .NET Bridge
+//      This file is part of .NET Bridge
 //
 // Copyright:
 //      2010 Jonathan Shore
@@ -19205,11 +19217,11 @@ namespace bridge.common.system
 }
 
 // -------------------------------------------
-// File: ../../DotNet/Library/src/common/system/ReentrantFairLockByMonitor.cs
+// File: ../DotNet/Library/src/common/system/ReentrantFairLockByMonitor.cs
 // -------------------------------------------
 ﻿// 
 // General:
-//      This file is pary of .NET Bridge
+//      This file is part of .NET Bridge
 //
 // Copyright:
 //      2010 Jonathan Shore
@@ -19322,11 +19334,11 @@ namespace bridge.common.system
 }
 
 // -------------------------------------------
-// File: ../../DotNet/Library/src/common/system/SpinLock.cs
+// File: ../DotNet/Library/src/common/system/SpinLock.cs
 // -------------------------------------------
 ﻿// 
 // General:
-//      This file is pary of .NET Bridge
+//      This file is part of .NET Bridge
 //
 // Copyright:
 //      2010 Jonathan Shore
@@ -19495,11 +19507,11 @@ namespace bridge.common.system
 }
 
 // -------------------------------------------
-// File: ../../DotNet/Library/src/common/system/TicketLock.cs
+// File: ../DotNet/Library/src/common/system/TicketLock.cs
 // -------------------------------------------
 ﻿// 
 // General:
-//      This file is pary of .NET Bridge
+//      This file is part of .NET Bridge
 //
 // Copyright:
 //      2010 Jonathan Shore
@@ -19692,11 +19704,11 @@ namespace bridge.common.system
 }
 
 // -------------------------------------------
-// File: ../../DotNet/Library/src/common/time/Clock.cs
+// File: ../DotNet/Library/src/common/time/Clock.cs
 // -------------------------------------------
 ﻿// 
 // General:
-//      This file is pary of .NET Bridge
+//      This file is part of .NET Bridge
 //
 // Copyright:
 //      2010 Jonathan Shore
@@ -19811,11 +19823,11 @@ namespace bridge.common.time
 	}
 }
 // -------------------------------------------
-// File: ../../DotNet/Library/src/common/time/ZDateTime.cs
+// File: ../DotNet/Library/src/common/time/ZDateTime.cs
 // -------------------------------------------
 ﻿// 
 // General:
-//      This file is pary of .NET Bridge
+//      This file is part of .NET Bridge
 //
 // Copyright:
 //      2010 Jonathan Shore
@@ -20294,11 +20306,11 @@ namespace bridge.common.time
 
 }
 // -------------------------------------------
-// File: ../../DotNet/Library/src/common/time/ZDateTimeGenerator.cs
+// File: ../DotNet/Library/src/common/time/ZDateTimeGenerator.cs
 // -------------------------------------------
 ﻿// 
 // General:
-//      This file is pary of .NET Bridge
+//      This file is part of .NET Bridge
 //
 // Copyright:
 //      2010 Jonathan Shore
@@ -20637,11 +20649,11 @@ namespace bridge.common.time
 }
 
 // -------------------------------------------
-// File: ../../DotNet/Library/src/common/time/ZDateTimeInfo.cs
+// File: ../DotNet/Library/src/common/time/ZDateTimeInfo.cs
 // -------------------------------------------
 ﻿// 
 // General:
-//      This file is pary of .NET Bridge
+//      This file is part of .NET Bridge
 //
 // Copyright:
 //      2010 Jonathan Shore
@@ -20716,11 +20728,11 @@ namespace bridge.common.time
 }
 
 // -------------------------------------------
-// File: ../../DotNet/Library/src/common/time/ZDateTimeRange.cs
+// File: ../DotNet/Library/src/common/time/ZDateTimeRange.cs
 // -------------------------------------------
 ﻿// 
 // General:
-//      This file is pary of .NET Bridge
+//      This file is part of .NET Bridge
 //
 // Copyright:
 //      2010 Jonathan Shore
@@ -20836,11 +20848,11 @@ namespace bridge.common.time
 	}
 }
 // -------------------------------------------
-// File: ../../DotNet/Library/src/common/time/ZDaylightSavings.cs
+// File: ../DotNet/Library/src/common/time/ZDaylightSavings.cs
 // -------------------------------------------
 ﻿// 
 // General:
-//      This file is pary of .NET Bridge
+//      This file is part of .NET Bridge
 //
 // Copyright:
 //      2010 Jonathan Shore
@@ -20947,11 +20959,11 @@ namespace bridge.common.time
 }
 
 // -------------------------------------------
-// File: ../../DotNet/Library/src/common/time/ZTime.cs
+// File: ../DotNet/Library/src/common/time/ZTime.cs
 // -------------------------------------------
 ﻿// 
 // General:
-//      This file is pary of .NET Bridge
+//      This file is part of .NET Bridge
 //
 // Copyright:
 //      2010 Jonathan Shore
@@ -21212,11 +21224,11 @@ namespace bridge.common.time
 	}
 }
 // -------------------------------------------
-// File: ../../DotNet/Library/src/common/time/ZTimeOfDay.cs
+// File: ../DotNet/Library/src/common/time/ZTimeOfDay.cs
 // -------------------------------------------
 ﻿// 
 // General:
-//      This file is pary of .NET Bridge
+//      This file is part of .NET Bridge
 //
 // Copyright:
 //      2010 Jonathan Shore
@@ -21442,11 +21454,11 @@ namespace bridge.common.time
 }
 
 // -------------------------------------------
-// File: ../../DotNet/Library/src/common/time/ZTimeRange.cs
+// File: ../DotNet/Library/src/common/time/ZTimeRange.cs
 // -------------------------------------------
 ﻿// 
 // General:
-//      This file is pary of .NET Bridge
+//      This file is part of .NET Bridge
 //
 // Copyright:
 //      2010 Jonathan Shore
@@ -21610,11 +21622,11 @@ namespace bridge.common.time
 	}
 }
 // -------------------------------------------
-// File: ../../DotNet/Library/src/common/time/ZTimeZone.cs
+// File: ../DotNet/Library/src/common/time/ZTimeZone.cs
 // -------------------------------------------
 ﻿// 
 // General:
-//      This file is pary of .NET Bridge
+//      This file is part of .NET Bridge
 //
 // Copyright:
 //      2010 Jonathan Shore
@@ -22137,11 +22149,11 @@ namespace bridge.common.time
 }
 
 // -------------------------------------------
-// File: ../../DotNet/Library/src/common/utils/Any.cs
+// File: ../DotNet/Library/src/common/utils/Any.cs
 // -------------------------------------------
 ﻿// 
 // General:
-//      This file is pary of .NET Bridge
+//      This file is part of .NET Bridge
 //
 // Copyright:
 //      2010 Jonathan Shore
@@ -22284,11 +22296,11 @@ namespace bridge.common.utils
 	}
 }
 // -------------------------------------------
-// File: ../../DotNet/Library/src/common/utils/ArgumentParser.cs
+// File: ../DotNet/Library/src/common/utils/ArgumentParser.cs
 // -------------------------------------------
 ﻿// 
 // General:
-//      This file is pary of .NET Bridge
+//      This file is part of .NET Bridge
 //
 // Copyright:
 //      2010 Jonathan Shore
@@ -22921,11 +22933,11 @@ namespace bridge.common.utils
 	
 }
 // -------------------------------------------
-// File: ../../DotNet/Library/src/common/utils/ArrayUtils.cs
+// File: ../DotNet/Library/src/common/utils/ArrayUtils.cs
 // -------------------------------------------
 ﻿// 
 // General:
-//      This file is pary of .NET Bridge
+//      This file is part of .NET Bridge
 //
 // Copyright:
 //      2010 Jonathan Shore
@@ -23340,11 +23352,11 @@ namespace bridge.common.utils
 }
 
 // -------------------------------------------
-// File: ../../DotNet/Library/src/common/utils/AtomicUtils.cs
+// File: ../DotNet/Library/src/common/utils/AtomicUtils.cs
 // -------------------------------------------
 ﻿// 
 // General:
-//      This file is pary of .NET Bridge
+//      This file is part of .NET Bridge
 //
 // Copyright:
 //      2010 Jonathan Shore
@@ -23438,11 +23450,11 @@ namespace bridge.common.utils
 }
 
 // -------------------------------------------
-// File: ../../DotNet/Library/src/common/utils/CmpUtils.cs
+// File: ../DotNet/Library/src/common/utils/CmpUtils.cs
 // -------------------------------------------
 ﻿// 
 // General:
-//      This file is pary of .NET Bridge
+//      This file is part of .NET Bridge
 //
 // Copyright:
 //      2010 Jonathan Shore
@@ -24001,11 +24013,11 @@ namespace bridge.common.utils
 	}
 }
 // -------------------------------------------
-// File: ../../DotNet/Library/src/common/utils/FileUtils.cs
+// File: ../DotNet/Library/src/common/utils/FileUtils.cs
 // -------------------------------------------
 ﻿// 
 // General:
-//      This file is pary of .NET Bridge
+//      This file is part of .NET Bridge
 //
 // Copyright:
 //      2010 Jonathan Shore
@@ -24774,11 +24786,11 @@ namespace bridge.common.io
 }
 
 // -------------------------------------------
-// File: ../../DotNet/Library/src/common/utils/Logger.cs
+// File: ../DotNet/Library/src/common/utils/Logger.cs
 // -------------------------------------------
 ﻿// 
 // General:
-//      This file is pary of .NET Bridge
+//      This file is part of .NET Bridge
 //
 // Copyright:
 //      2010 Jonathan Shore
@@ -25238,11 +25250,11 @@ namespace bridge.common.utils
 }
 
 // -------------------------------------------
-// File: ../../DotNet/Library/src/common/utils/ResourceLoader.cs
+// File: ../DotNet/Library/src/common/utils/ResourceLoader.cs
 // -------------------------------------------
 ﻿// 
 // General:
-//      This file is pary of .NET Bridge
+//      This file is part of .NET Bridge
 //
 // Copyright:
 //      2010 Jonathan Shore
@@ -25551,11 +25563,11 @@ namespace bridge.common.utils
 }
 
 // -------------------------------------------
-// File: ../../DotNet/Library/src/common/utils/StringUtils.cs
+// File: ../DotNet/Library/src/common/utils/StringUtils.cs
 // -------------------------------------------
 ﻿// 
 // General:
-//      This file is pary of .NET Bridge
+//      This file is part of .NET Bridge
 //
 // Copyright:
 //      2010 Jonathan Shore
@@ -26789,11 +26801,11 @@ namespace bridge.common.utils
 
 
 // -------------------------------------------
-// File: ../../DotNet/Library/src/common/utils/SystemUtils.cs
+// File: ../DotNet/Library/src/common/utils/SystemUtils.cs
 // -------------------------------------------
 ﻿// 
 // General:
-//      This file is pary of .NET Bridge
+//      This file is part of .NET Bridge
 //
 // Copyright:
 //      2010 Jonathan Shore

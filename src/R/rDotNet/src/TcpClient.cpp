@@ -1,6 +1,6 @@
 //
 // General:
-//      This file is pary of .NET Bridge
+//      This file is part of .NET Bridge
 //
 // Copyright:
 //      2010 Jonathan Shore
@@ -174,7 +174,7 @@ void RTcpClient::connect (const std::string& host, int port)
 	    break;
     }
 
-    // free up host resolution & check for connection
+    // free up host resolution list
     freeaddrinfo(hostlist);
 }
 
@@ -195,9 +195,9 @@ void RTcpClient::connect (const std::string& host, int port)
 
     // create address
     struct sockaddr_in addr;
-    bzero((void *)&addr, sizeof(addr));
+    memset((void *)&addr, 0, sizeof(addr));
     addr.sin_family = AF_INET;
-    bcopy((void *)server->h_addr, (void *)&addr.sin_addr.s_addr, server->h_length);
+    memcpy((void *)&addr.sin_addr.s_addr, (void *)server->h_addr, server->h_length);
     addr.sin_port = htons(port);
 
     // create connection

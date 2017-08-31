@@ -1,6 +1,6 @@
 //
 // General:
-//      This file is pary of .NET Bridge
+//      This file is part of .NET Bridge
 //
 // Copyright:
 //      2010 Jonathan Shore
@@ -20,7 +20,6 @@
 //      limitations under the License.
 //
 
-// [[Rcpp::depends(BH)]]
 
 #ifndef CLR_OBJECT_ARRAY
 #define CLR_OBJECT_ARRAY

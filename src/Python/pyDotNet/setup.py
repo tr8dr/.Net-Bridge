@@ -40,6 +40,8 @@ def which (cmd):
 
     return None
 
+def sor (a, b):
+    a if a else b
         
 # check version of python
 if sys.version_info.major < 3:
@@ -63,15 +65,15 @@ if os.path.isdir (bindir):
 
 
 # find .NET & .NET build commands in path
-msbuild = which ("msbuild")
+build = sor (which ("msbuild"), which("xbuild"))
 nuget = which ("nuget")
 
 # try to build CLR server
-if msbuild and nuget:
+if build and nuget:
     cwd = os.getcwd()
     os.chdir (srcdir)
     subprocess.run ([nuget, 'restore'], stderr=subprocess.STDOUT, check=True)
-    subprocess.run ([msbuild], stderr=subprocess.STDOUT, check=True)
+    subprocess.run ([build], stderr=subprocess.STDOUT, check=True)
     os.chdir (cwd)
     
     os.makedirs (targetdir)

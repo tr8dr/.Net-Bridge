@@ -129,8 +129,9 @@ namespace **com.stg.dummy**:
 The python API provides CLR as proxy objects almost indistinguishable from python objects.  One can interact with normal python syntax.  Here is how we could call the above from python:
 
 .. code-block:: python
-		
-    clr = CLRApi.get()
+
+    ## create CLI API
+    clr = CLRApi (dll="~/Dev/mymodels.dll")
 
     ## create circle object
     circle = clr.new("com.stg.dummy.Circle", 10.0)
@@ -164,13 +165,14 @@ Unix
 
 Depending on how your system is setup, the above may require running
 as sudo on unix.  One should also make sure you have the mono SDK installed
-and **nuget** and **msbuild** in your path.   On OS X mono installs in:
+and **nuget** and **msbuild** or **xbuild** in your path.   On OS X mono installs in:
 
 *  ``/Library/Frameworks/Mono.framework/Commands``
 
-and on Linux will depend on the package installer.  The  bin directory
-where msbuild and nuget reside must be added to your path.  Before
-running the package install, check that **nuget** and **msbuild**
+and on Linux will depend on the package installer.  The  bin directories
+where msbuild / xbuild and nuget reside must be added to your path.  Note that
+mono installations on OS X name the project builder as 'msbuild' and
+on Linux use 'xbuild'. Before running the package install, check that **nuget** and **msbuild** / **xbuild**
 can be run from the command line, then run the following:
 
 

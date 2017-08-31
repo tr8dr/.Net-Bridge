@@ -3,10 +3,10 @@
 #  Copy and compress .NET sources for the rDotNet distribution
 #
 
-lib_root="../../DotNet/Library/src"
-app_root="../../DotNet/Server/src"
+lib_root="../DotNet/Library/src"
+app_root="../DotNet/Server/src"
 
-dst_dir="inst/server"
+dst_dir="rDotNet/inst/server"
 
 cat /dev/null > ${dst_dir}/Library.cs
 cat /dev/null > /tmp/using

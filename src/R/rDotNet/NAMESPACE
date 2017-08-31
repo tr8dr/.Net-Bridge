@@ -5,3 +5,4 @@ S3method("[", rDotNet)
 S3method(print, rDotNet)
 
 importFrom(Rcpp, evalCpp)
+importFrom(testthat, test_check)

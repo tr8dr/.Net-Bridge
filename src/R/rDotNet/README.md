@@ -25,9 +25,6 @@ The following data types in arguments are supported:
 - vectors (with optional named index)
 - matrices (with optional named row and column indices)
 
-## The History
-Some years ago, wrote the .NET bridge as part of a much larger research and trading codebase.  Given interest from others on the net, made an effort to extract the bridge and related classes from the much larger codebase.   While the .NET Bridge codebase is a factor of 100x smaller, there may yet be classes that could be removed, to make this even tighter.
-
 ## How It Works
 The R or Python packages communicate with the .NET side through simple client / server interactions.  Your .NET libraries are loaded by a runner ```CLRServer.exe``` that provides a TCP-based API, giving full visibility into your library(ies). 
 
@@ -159,13 +156,15 @@ the OS specific installation instructions below.
 ## Unix
 Depending on how your system is setup, the above may require running
 as sudo on unix.  One should also make sure you have the mono SDK installed
-and **nuget** and **msbuild** in your path.   On OS X mono installs in:
+and **nuget** and **msbuild** or **xbuild** in your path.   On OS X mono installs in:
 
 - /Library/Frameworks/Mono.framework/Commands
 
 and on Linux will depend on the package installer.  The  bin directory
-where msbuild and nuget reside must be added to your path.  Before
-running the package install, check that **nuget** and **msbuild**
+where msbuild / xbuild and nuget reside must be added to your path.
+Note that on windows and OS X, the builder is called 'msbuild' and on
+linux is 'xbuild'.  Before
+running the package install, check that **nuget** and **msbuild** / **xbuild**
 can be run from the command line, then run the following:
 
 ```sh

@@ -1,6 +1,6 @@
 ﻿// 
 // General:
-//      This file is pary of .NET Bridge
+//      This file is part of .NET Bridge
 //
 // Copyright:
 //      2010 Jonathan Shore
@@ -701,6 +701,16 @@ namespace bridge.common.reflection
                     args[i] = narray;
                 }
 
+		else if (pclass == typeof(double []))
+		{
+		    if (typeof (Vector<double>).IsAssignableFrom (aclass)) {
+			var vec = (Vector<double>)args [i];
+			var data = MatrixUtils.DataOf (vec);
+			args [i] = data;
+		    } else if (aclass != typeof (double []))
+			throw new ArgumentException ("unknown argument pairing: " + aclass + " -> double[]");
+		}
+
                 else if (typeof(Vector<double>).IsAssignableFrom(pclass))
                 {
                     if (aclass == typeof(double))
@@ -865,7 +875,9 @@ namespace bridge.common.reflection
                 var eklass = parm.ParameterType;
                 var aklass = args[i] != null ? args[i].GetType() : null;
 
-                if (eklass == aklass || eklass.IsAssignableFrom(aklass) || DelegateGenerator.IsAssignableFrom(eklass, aklass))
+		if (aklass == typeof (IndexedVector) && eklass.IsAssignableFrom (typeof (double [])))
+		    score += 200;
+                else if (eklass == aklass || eklass.IsAssignableFrom(aklass) || DelegateGenerator.IsAssignableFrom(eklass, aklass))
                     score += 200;
                 else
                     score += ArgumentPenalty(eklass, aklass);

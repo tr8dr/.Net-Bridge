@@ -1,6 +1,6 @@
 ﻿// 
 // General:
-//      This file is pary of .NET Bridge
+//      This file is part of .NET Bridge
 //
 // Copyright:
 //      2010 Jonathan Shore

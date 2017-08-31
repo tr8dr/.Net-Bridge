@@ -1,6 +1,6 @@
 //
 // General:
-//      This file is pary of .NET Bridge
+//      This file is part of .NET Bridge
 //
 // Copyright:
 //      2010 Jonathan Shore
@@ -19,8 +19,6 @@
 //      See the License for the specific language governing permissions and
 //      limitations under the License.
 //
-
-// [[Rcpp::depends(BH)]]
 
 #ifndef CLR_SETPROP
 #define CLR_SETPROP
