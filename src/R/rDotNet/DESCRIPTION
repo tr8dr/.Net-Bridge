@@ -1,7 +1,7 @@
 Package: rDotNet
 Type: Package
 Title: Low-Level Interface to the '.NET' Virtual Machine Along the Lines of the R C/Call API
-Version: 0.9.0
+Version: 0.9.1
 Date: 2017-08-30
 Author: Jonathan Shore <jonathan.shore@gmail.com>
 Maintainer: Jonathan Shore <jonathan.shore@gmail.com>
