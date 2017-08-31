@@ -16,9 +16,9 @@
         return ()
     }
     
-    if (Sys.which("msbuild") == "")
+    if (Sys.which("msbuild") == "" && Sys.which("xbuild") == "")
     {
-        warning ("could not find msbuild in path; will not be able to use rDotNet unless corrected and rebuilt")
+        warning ("could not find msbuild or xbuild in path; will not be able to use rDotNet unless corrected and rebuilt")
         return()
     }
     
@@ -29,7 +29,7 @@
     system2 ("nuget", "restore", wait=TRUE, stderr=TRUE, stdout=TRUE)
         
     packageStartupMessage ("building project")
-    system2 ("msbuild", wait=TRUE, stderr=TRUE, stdout=TRUE)
+    system2 (ifelse(Sys.which("msbuild") != "", "msbuild", "xbuild"), wait=TRUE, stderr=TRUE, stdout=TRUE)
 
     setwd(cwd)
 }
