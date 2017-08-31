@@ -1,1 +1,7 @@
-Jonathan Shore <jonathan.shore@gmail.com>
+.NET Bridge was originally created in 2010 by Jonathan Shore <jonathan.shore@gmail.com> 
+and posted publicly in 2017 (once had time to document and package for CRAN and PyPi) 
+
+Here is an list of MUCH-APPRECIATED CONTRIBUTORS -- people who have submitted patches, 
+reported bugs, and generally made rDotNet that much better:
+
+Jari Karppinen
