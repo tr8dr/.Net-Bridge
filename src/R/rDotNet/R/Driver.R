@@ -35,13 +35,21 @@
             stop (sprintf("cannot find dll: %s", fullpath))
     }
 
+    args.for.dlls <- function (dlls)
+    {
+        ndlls <- length(dlls)
+        server.args <- rep("-dll", ndlls * 2)
+        server.args[1:ndlls * 2] <- sapply(dlls, expand.dll)
+        server.args
+    }
+
     or <- function (a,b)
     {
         if (is.null(a) || a == "") b else a
     }
 
     
-    function (host = "localhost", port = 56789, dll=NULL, server.args=NULL)
+    function (host = "localhost", port = 56789, dlls=NULL, server.args=NULL)
     {
         if (initialized)
             return()
@@ -67,10 +75,15 @@
             server <- sprintf("%s/server/bin/Debug/CLRServer.exe", packagedir)
         
             dll.env <- or (Sys.getenv("RDOTNET_DLL"), Sys.getenv("rDotNet_DLL"))
-            if (!is.null(dll))
-                server.args <- c(server.args, "-dll", expand.dll(dll))
+            if (!is.null(dlls))
+            {
+                server.args <- c(server.args, "-dll", args.for.dlls(dlls))
+            }
             else if (dll.env != "")
-                server.args <- c(server.args, "-dll", expand.dll(dll.env))
+            {
+                dlls <- strsplit(dll.env,';')
+                server.args <- c(server.args, "-dll", args.for.dlls(dlls))
+            }
             
             args <- (if (.Platform$OS.type == "windows")
                 c("-url", sprintf("svc://%s:%d/", host, port), server.args)
@@ -94,9 +107,9 @@
 
 
 ## initialize CLR
-.cinit <- function (host = "localhost", port = 56789, dll=NULL, server.args=NULL)
+.cinit <- function (host = "localhost", port = 56789, dlls=NULL, server.args=NULL)
 {
-    .initialize (host, port, dll, server.args)
+    .initialize (host, port, dlls, server.args)
 }
 
 

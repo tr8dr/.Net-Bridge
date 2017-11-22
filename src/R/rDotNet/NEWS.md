@@ -12,5 +12,13 @@ This version fixes some build issues.
 - added unit tests to the tests directory (which will be skipped if .NET is not available)
 - adjusted the TcpClient source to use a newer API, so will build on Solaris
 
+# rDotNet 0.9.2
+This version allows the .NET bridge to initialize with more than one
+DLL either provideds as a vector of DLLs or a semicolon delimited list
+of dlls as an environment variable.
+
+- feature and suggested implementation provided by SimonRi1985
+
+
 
 
