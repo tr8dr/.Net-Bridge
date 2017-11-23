@@ -72,7 +72,7 @@ The second approch is to explicitly call the rDotNet initialization function:
 require(rDotNet)
 
 ## initialize
-.cinit(dll="~/Dev/mymodels.dll")
+.cinit(dlls="~/Dev/mymodels.dll")
 
 ## create an object and call a method
 obj <- .cnew ("NormalDistribution1D", 0.0, 1.0)
