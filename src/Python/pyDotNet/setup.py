@@ -41,7 +41,7 @@ def which (cmd):
     return None
 
 def sor (a, b):
-    a if a else b
+    return a if a else b
         
 # check version of python
 if sys.version_info.major < 3:
