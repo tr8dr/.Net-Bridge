@@ -81,7 +81,12 @@ class CLRApi:
 
             serverargs = self.server_args
             if self.dll:
-                serverargs = serverargs + ["-dll", self.dll]
+                if self.dll:
+                    if type(self.dll) == str:
+                        serverargs = serverargs + ["-dll", self.dll]
+                    elif type(self.dll) == list:
+                        for dll in self.dll:
+                            serverargs = serverargs + ["-dll", dll]
 
             if SystemUtils.is_unix():
                 self.pid = subprocess.Popen(["mono", "--llvm", server] + self.server_args).pid
