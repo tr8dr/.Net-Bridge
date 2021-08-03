@@ -37,7 +37,7 @@ class CLRRelease : public CLRMessage
 {
   public:
   
-    CLRRelease (CLRApi* api, int objectId)
+    CLRRelease (CLRApi* api, int32_t objectId)
       : CLRMessage(CLRMessage::TypeRelease, api), _objectId(objectId) { }
 
     // serialize object to stream
@@ -48,7 +48,7 @@ class CLRRelease : public CLRMessage
     }
   
   protected:
-    int  _objectId;
+    int32_t  _objectId;
 };
 
 #endif

@@ -32,11 +32,11 @@ using namespace std;
 //
 // Byte value
 //
-class CLRInt32 : public CLRValue<int>
+class CLRInt32 : public CLRValue<int32_t>
 {
   public:
 
-    CLRInt32 (CLRApi* api, int* value = nullptr)
+    CLRInt32 (CLRApi* api, int32_t* value = nullptr)
       : CLRValue(CLRMessage::TypeInt32, api, value)
     {
     }
@@ -52,7 +52,7 @@ class CLRInt32 : public CLRValue<int>
     // deserialize object from stream
     void deserialize (BufferedSocketReader& stream)
     {
-        _value = new int;
+        _value = new int32_t;
 	*_value = stream.read_int32();
     }
 };

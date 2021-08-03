@@ -37,7 +37,7 @@ class CLRCallMethod : public CLRMessage
 {
   public:
   
-    CLRCallMethod (CLRApi* api, int objectId, const std::string& method, const List& argv)
+    CLRCallMethod (CLRApi* api, int32_t objectId, const std::string& method, const List& argv)
       : CLRMessage(CLRMessage::TypeCallMethod, api), _objectId(objectId), _method(method), _argv(argv)
     {
     }
@@ -51,7 +51,7 @@ class CLRCallMethod : public CLRMessage
 
 	// argv
 	int argc = _argv.size();
-	stream.write_int16((short)argc);
+	stream.write_int16((int16_t)argc);
 
 	CLRFactory* factory = _api->factory();
 	for (int i = 0 ; i < argc ; i++)
@@ -64,7 +64,7 @@ class CLRCallMethod : public CLRMessage
 
   
   protected:
-    int           _objectId;
+    int32_t       _objectId;
     std::string   _method;
     List          _argv;
 };

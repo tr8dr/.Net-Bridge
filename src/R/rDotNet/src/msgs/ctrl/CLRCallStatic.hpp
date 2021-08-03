@@ -49,7 +49,7 @@ class CLRCallStatic : public CLRMessage
 
 	// argv
 	int argc = _argv.size();
-	stream.write_int16((short)argc);
+	stream.write_int16((int16_t)argc);
 
 	CLRFactory* factory = _api->factory();
 	for (int i = 0 ; i < argc ; i++)

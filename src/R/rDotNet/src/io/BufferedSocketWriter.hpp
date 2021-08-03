@@ -65,7 +65,7 @@ class BufferedSocketWriter
     }
 
     // write int16 
-    void write_int16 (short v)
+    void write_int16 (int16_t v)
     {
         if ((_len+2) > _buflen)
 	    flush();
@@ -76,7 +76,7 @@ class BufferedSocketWriter
     }
 
     // write int32 
-    void write_int32 (int v)
+    void write_int32 (int32_t v)
     {
         if ((_len+4) > _buflen)
 	    flush();
@@ -89,7 +89,7 @@ class BufferedSocketWriter
     }
 
     // write int64 
-    void write_int64 (long v)
+    void write_int64 (int64_t v)
     {
         if ((_len+8) > _buflen)
 	    flush();

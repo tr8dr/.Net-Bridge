@@ -37,7 +37,7 @@ class CLRSetProperty : public CLRMessage
 {
   public:
   
-    CLRSetProperty (CLRApi* api, int objectId, const std::string& property, const RObject& value)
+    CLRSetProperty (CLRApi* api, int32_t objectId, const std::string& property, const RObject& value)
       : CLRMessage(CLRMessage::TypeSetProperty, api), _objectId(objectId),
 	_property(property), _value(value) { }
 
@@ -56,7 +56,7 @@ class CLRSetProperty : public CLRMessage
 
   
   protected:
-    int           _objectId;
+    int32_t       _objectId;
     std::string   _property;
     RObject       _value;
 };

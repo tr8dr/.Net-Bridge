@@ -37,7 +37,7 @@ class CLRGetIndexed : public CLRMessage
 {
   public:
   
-    CLRGetIndexed (CLRApi* api, int objectId, int ith)
+    CLRGetIndexed (CLRApi* api, int32_t objectId, int32_t ith)
       : CLRMessage(CLRMessage::TypeGetIndexed, api), _objectId(objectId),
 	_ith(ith) { }
 
@@ -50,8 +50,8 @@ class CLRGetIndexed : public CLRMessage
     }
   
   protected:
-    int      _objectId;
-    int      _ith;
+    int32_t      _objectId;
+    int32_t      _ith;
 };
 
 #endif

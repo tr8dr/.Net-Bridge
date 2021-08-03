@@ -19,6 +19,12 @@ of dlls as an environment variable.
 
 - feature and suggested implementation provided by SimonRi1985
 
+# rDotNet 0.9.3
+This version fixes some C/C++ type issues in the build.  The code was
+uncorrectly using "long", "int", and "short", assuming 64, 32, and 16
+bits respectively.   Now uses int64_t, int32_t, and int16_t.
+
+- bug fix requested by Tomas Kalibera.
 
 
 

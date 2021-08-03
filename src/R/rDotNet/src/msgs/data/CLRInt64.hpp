@@ -33,11 +33,11 @@ using namespace std;
 //
 // Int64 value
 //
-class CLRInt64 : public CLRValue<long>
+class CLRInt64 : public CLRValue<int64_t>
 {
   public:
 
-    CLRInt64 (CLRApi* api, long* value = nullptr)
+    CLRInt64 (CLRApi* api, int64_t* value = nullptr)
       : CLRValue(CLRMessage::TypeInt64, api, value)
     {
     }
@@ -53,7 +53,7 @@ class CLRInt64 : public CLRValue<long>
     // deserialize object from stream
     void deserialize (BufferedSocketReader& stream)
     {
-        _value = new long;
+        _value = new int64_t;
 	*_value = stream.read_int64();
     }
 };

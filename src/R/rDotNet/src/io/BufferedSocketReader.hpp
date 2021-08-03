@@ -98,40 +98,40 @@ class BufferedSocketReader
     }
 
     // read int16 
-    short read_int16 ()
+    int16_t read_int16 ()
     {
         if ((_pos+2) > _len)
 	    replenish(2);
 	if (_len < 2)
 	    throw ReadStreamTerminatedException();
 
-	short* bufint = reinterpret_cast<short *>(_buffer + _pos);
+	int16_t* bufint = reinterpret_cast<int16_t *>(_buffer + _pos);
 	_pos += 2;
 	return *bufint;
     }
 
     // read int32 
-    int read_int32 ()
+    int32_t read_int32 ()
     {
         if ((_pos+4) > _len)
 	    replenish(4);
 	if (_len < 4)
 	    throw ReadStreamTerminatedException();
 
-	int* bufint = reinterpret_cast<int *>(_buffer + _pos);
+	int32_t* bufint = reinterpret_cast<int32_t *>(_buffer + _pos);
 	_pos += 4;
 	return *bufint;
     }
 
     // read int64 
-    long read_int64 ()
+    int64_t read_int64 ()
     {
         if ((_pos+8) > _len)
 	    replenish(8);
 	if (_len < 8)
 	    throw ReadStreamTerminatedException();
 
-	long* bufint = reinterpret_cast<long *>(_buffer + _pos);
+	int64_t* bufint = reinterpret_cast<int64_t *>(_buffer + _pos);
 	_pos += 8;
 	return *bufint;
     }
