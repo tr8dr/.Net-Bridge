@@ -21,6 +21,7 @@
 //
 
 using System;
+using System.Collections.Concurrent;
 using System.Collections.Generic;
 using System.Threading;
 
@@ -65,14 +66,24 @@ namespace bridge.server
 			int objectid = 0;
 			if (_cache_oi.TryGetValue (obj, out objectid))
 				return new CLRObjectProxy (objectid);
-				
+
 			var proxy = new CLRObjectProxy (Interlocked.Increment (ref _idgenerator));
-			_cache_io [proxy.ObjectId] = obj;
-			_cache_oi [obj] = proxy.ObjectId;
+
+			if (_cache_io.ContainsKey(proxy.ObjectId))
+			{
+				_cache_io[proxy.ObjectId] = obj;
+				_cache_oi[obj] = proxy.ObjectId;
+            }
+            else
+            {
+				_cache_io.Add (proxy.ObjectId, obj);
+				_cache_oi.Add (obj, proxy.ObjectId);
+            }
+
 			return proxy;
 		}
 
-		
+
 		/// <summary>
 		/// Create a proxy for the given object (and record the mapping)
 		/// </summary>
@@ -82,11 +93,11 @@ namespace bridge.server
 			var iproxy = obj as CLRObjectProxy;
 			if (iproxy != null)
 				return iproxy.ObjectId;
-			
+
 			int objectid = 0;
 			if (_cache_oi.TryGetValue (obj, out objectid))
 				return objectid;
-			
+
 			var proxy = new CLRObjectProxy (Interlocked.Increment (ref _idgenerator));
 			_cache_io [proxy.ObjectId] = obj;
 			_cache_oi [obj] = proxy.ObjectId;
@@ -102,8 +113,8 @@ namespace bridge.server
 		{
 			Release (proxy.ObjectId);
 		}
-		
-		
+
+
 		/// <summary>
 		/// Release the specified proxy by id.
 		/// </summary>
@@ -118,7 +129,7 @@ namespace bridge.server
 			}
 		}
 
-		
+
 		/// <summary>
 		/// Find object by proxy
 		/// </summary>
@@ -128,8 +139,8 @@ namespace bridge.server
 		{
 			return (_cache_io.TryGetValue (proxy.ObjectId, out obj));
 		}
-		
-		
+
+
 		/// <summary>
 		/// Find object by proxy
 		/// </summary>
@@ -140,7 +151,7 @@ namespace bridge.server
 			return (_cache_io.TryGetValue (proxyid, out obj));
 		}
 
-		
+
 		/// <summary>
 		/// Find object for proxy ID
 		/// </summary>
@@ -174,8 +185,8 @@ namespace bridge.server
 		// Variables
 
 		private int						_objectId;
-		static Dictionary<int,object>	_cache_io = new Dictionary<int, object>();
-		static Dictionary<object,int>	_cache_oi = new Dictionary<object, int>();
+		static IDictionary<int,object>	_cache_io = new ConcurrentDictionary<int, object>();
+		static IDictionary<object,int>	_cache_oi = new ConcurrentDictionary<object, int>();
 		static int						_idgenerator = 0;
 	}
 }
