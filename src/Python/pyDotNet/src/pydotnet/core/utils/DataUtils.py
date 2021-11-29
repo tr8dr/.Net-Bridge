@@ -22,7 +22,10 @@
 
 import numpy as np
 import pandas as pd
-from collections import Iterable
+try:    
+    from collections.abc import Iterable
+except ImportError:    
+    from collections import Iterable
 from scipy.stats import *
 
 
